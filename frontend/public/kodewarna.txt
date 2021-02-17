@@ -1,0 +1,4 @@
+hijau tosca : #16c79a
+Biru Navi : #19456b
+Biru Muda : #11698e
+Backround : #f8f1f1
