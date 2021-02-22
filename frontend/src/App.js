@@ -5,6 +5,7 @@ import {
   UserOutlined
 } from '@ant-design/icons';
 import HomeScreen from './screen/HomeScreen.js';
+import PrepareScreen from './screen/PrepareScreen.js';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     
 
       <main>
+        <Route path="/Prepare" component={PrepareScreen} />
         <Route path="/" exact={true} component={HomeScreen} />
       </main>
 
@@ -41,7 +43,7 @@ function App() {
               <h3>Developed By</h3>
                 <div className="follow">
                   <a href="https://www.instagram.com/adithyanuzpratama/">
-                    <InstagramOutlined /> adithyanuzpratama
+                    <InstagramOutlined /> TIM
                     <br />
                   </a>
                 </div>
