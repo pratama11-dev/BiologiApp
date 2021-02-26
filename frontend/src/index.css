@@ -31,6 +31,7 @@ body {
   margin: auto;
   overflow: hidden;
   text-align: center;
+  display: block;
 }
 
 .small-container{
@@ -156,7 +157,8 @@ header a {
 .logo img {
   width: 10%;
   float: left;
-  background-color: transparent;
+  display: flex;
+  cursor: pointer;
 }
 .menu a {
   font-size: 1.8rem;
@@ -191,7 +193,7 @@ header a {
 .row{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: left;
 }
