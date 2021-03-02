@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import { useDispatch, useSelector } from 'react-redux';
+import { listAlat } from '../actions/alatAction'
 
 export default function ChooseScreen() {
 
-    const [alat, setAlat] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch();
+    const alatList = useSelector( state => state.alatList);
+    const { loading, error, alat } = alatList;
 
     useEffect(() => {
-        const fecthData = async () => {
-            const { data } = await axios.get('api/alat');
-            setAlat(data);
-        }
-        fecthData();
+        dispatch(listAlat());
     }, []);
 
     return (
         <div className="gird-container">
+            {loading? <LoadingBox></LoadingBox>
+            :
+            error?<MessageBox>{error}</MessageBox>
+            :
             <div className="container">
                 <div className="tittle">
                     <h1>Macam-Macam Percobaan</h1>
@@ -28,7 +29,7 @@ export default function ChooseScreen() {
                 <div className="topik">
                     {alat.map((alat) => <>
                         <div className="tittle" data-aos={"fade-down"} key={alat._id}>
-                            <h2>{alat.nama}</h2>
+                            <h2 key={alat._id}>{alat.nama}</h2>
                         </div>
                         <div className="btn" data-aos={"fade-right"}>
                             <Link to={"/prepare/" + alat._id}>
@@ -38,6 +39,7 @@ export default function ChooseScreen() {
                     </>)}
                 </div>
             </div>
+            }
         </div>
     )
 }

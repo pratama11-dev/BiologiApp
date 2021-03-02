@@ -1,9 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import data from '../data'
 
 export default function PrepareScreen(props) {
 
-    const alat = alat.find((x) => x._id === props.match.params.id);
+    const alat = data.alat.find((x) => x._id === props.match.params.id);
     
     if (!alat) {
         return <div> Product Not Found</div>;
@@ -15,7 +16,7 @@ export default function PrepareScreen(props) {
                     <Link to="/choose">&larr;</Link>
             </div>
             <div className="container">
-                <div className="tittle" data-aos={"fade-down"} key={alat._id}>
+                <div className="tittle" data-aos={"fade-down"} >
                     <h2>{alat.nama}</h2>
                 </div>
                 <div className="topik">
@@ -32,7 +33,7 @@ export default function PrepareScreen(props) {
                     <div className="row" data-aos={"fade-down"}>
                         {alat.tools.map((tools) => <> 
                             <div className="col-3">
-                                <img src={tools.img}/>
+                                <img src={tools.img} alt=""/>
                                 <p>{tools.desc}</p>                            
                             </div>
                         </>)}

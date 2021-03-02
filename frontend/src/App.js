@@ -16,7 +16,7 @@ function App() {
         <div className="container">
           <div className="logo">
             <Link to="/">
-              <img src="./logo.png"/>
+              <img src="./logo.png" alt=""/>
             </Link>
           </div>
           <nav className="menu">
@@ -37,11 +37,11 @@ function App() {
           <div className="row">
             <div className="footer-col-1">
               <Link to="/">
-                <img src="./logo.png"/>
+                <img src="./logo.png" alt=""/>
               </Link>
             </div>
             <div className="footer-col-2">
-              <h3>Dikembangkan Oleh</h3>
+              <h3>Dikembangkan Oleh :</h3>
                 <div className="follow">
                   <a href="https://www.instagram.com/adithyanuzpratama/">
                     <InstagramOutlined /> TIM
