@@ -3,12 +3,18 @@ const data = {
         {
             _id:'1',
             nama:'Percobaan Tingkat Respirasi pada Serangga',
-            tujuan: "1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga 2. Mengetahui factor-faktor yang mempengaruhi respirasi pada serangga",
-            // tujuan:[
-            //     "1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga",
-            //     "2. Mengetahui factor-faktor yang mempengaruhi respirasi pada serangga"
-            // ],
-            langkah:'1. Timbanglah masing-masing 2 ekor jangkrik tersebut 2. Masukan Kristal NaOH / KOH ke dalam selapis kapas , lalu masukan ke dalam tabung respirometer 3. Masukan jangkrik pertama ke dalam tabung respirometer 4. Pasanglah tutup tabung respirometer yang mempunyai pipa kapiler berskala 5. Lapisilah sambungan antara tutup dan tabung respirometer dengan vaselin 6. Setelah itu, masukan setetes eosin pada kedua pipa kapiler berskala setiap 5 menit 7. Catatlah hasil pengamatan dalam tabel 8. Lakukan hal yang sama dengan jangkrik yang kedua.',
+            tujuan:[
+                "<br>1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga</br>",
+                "<br>2. Mengetahui factor-faktor yang mempengaruhi respirasi pada serangga</br>"
+                ],
+            langkah:["<br>1. Timbanglah masing-masing 2 ekor jangkrik tersebut</br>",
+                    "<br>2. Masukan Kristal NaOH / KOH ke dalam selapis kapas , lalu masukan ke dalam tabung respirometer</br>",
+                    "<br>3. Masukan jangkrik pertama ke dalam tabung respirometer</br>",
+                    "<br>4. Pasanglah tutup tabung respirometer yang mempunyai pipa kapiler berskala</br>",
+                    "<br>5. Lapisilah sambungan antara tutup dan tabung respirometer dengan vaselin</br>",
+                    "<br>6. Setelah itu, masukan setetes eosin pada kedua pipa kapiler berskala setiap 5 menit</br>",
+                    "<br>7. Catatlah hasil pengamatan dalam tabel</br>",
+                    "<br>8. Lakukan hal yang sama dengan jangkrik yang kedua.</br>"],
             tools:[
                 {
                     img:'../img/alat/cotton.png',
@@ -50,13 +56,17 @@ const data = {
         },
         {
             _id:'2',
-            nama:'Percobaan Tingkat Respirasi pada Serangga2',
-            tujuan: "1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga 2. Mengetahui factor-faktor yang mempengaruhi respirasi pada serangga",
-            // tujuan:[
-            //     "1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga",
-            //     "2. Mengetahui factor-faktor yang mempengaruhi respirasi pada serangga"
-            // ],
-            langkah:'1. Timbanglah masing-masing 2 ekor jangkrik tersebut 2. Masukan Kristal NaOH / KOH ke dalam selapis kapas , lalu masukan ke dalam tabung respirometer 3. Masukan jangkrik pertama ke dalam tabung respirometer 4. Pasanglah tutup tabung respirometer yang mempunyai pipa kapiler berskala 5. Lapisilah sambungan antara tutup dan tabung respirometer dengan vaselin 6. Setelah itu, masukan setetes eosin pada kedua pipa kapiler berskala setiap 5 menit 7. Catatlah hasil pengamatan dalam tabel 8. Lakukan hal yang sama dengan jangkrik yang kedua.',
+            nama:'Cobain',
+            tujuan: [
+                "<br>1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga</br>",
+                "<br>2. Mengetahui factor-faktor yang mempengaruhi respirasi pada serangga</br>"
+            ],
+            langkah:["<br>1. Timbanglah masing-masing 2 ekor jangkrik tersebut</br>",
+                    "<br>2. Masukan Kristal NaOH / KOH ke dalam selapis kapas , lalu masukan ke dalam tabung respirometer</br>",
+                    "<br>3. Masukan jangkrik pertama ke dalam tabung respirometer</br>",
+                    "<br>4. Pasanglah tutup tabung respirometer yang mempunyai pipa kapiler berskala</br>",
+                    "<br>5. Lapisilah sambungan antara tutup dan tabung respirometer dengan vaselin</br>",
+                    ],
             tools:[
                 {
                     img:'../img/alat/cotton.png',

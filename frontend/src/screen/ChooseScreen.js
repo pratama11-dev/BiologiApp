@@ -16,7 +16,7 @@ export default function ChooseScreen() {
                             <h2>{alat.nama}</h2>
                         </div>
                         <div className="btn" data-aos={"fade-right"}>
-                            <Link to={"/prepare/" + alat.nama}>
+                            <Link to={"/prepare/" + alat._id}>
                                 Coba Sekarang!
                             </Link>
                         </div>

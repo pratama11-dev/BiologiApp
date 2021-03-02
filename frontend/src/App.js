@@ -27,7 +27,7 @@ function App() {
     
 
       <main>
-        <Route path="/prepare/:name" component={PrepareScreen} />
+        <Route path="/prepare/:id" component={PrepareScreen} />
         <Route path="/choose" component={ChooseScreen} />
         <Route path="/" exact={true} component={HomeScreen} />
       </main>
