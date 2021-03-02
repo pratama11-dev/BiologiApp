@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import data from '../data'
 
 export default function PrepareScreen(props) {
 
-    const alat = data.alat.find((x) => x._id === props.match.params.id);
+    const alat = alat.find((x) => x._id === props.match.params.id);
     
     if (!alat) {
         return <div> Product Not Found</div>;
