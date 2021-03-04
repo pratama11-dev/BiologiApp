@@ -112,7 +112,7 @@ button {
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
   margin-left: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -143,10 +143,10 @@ input:hover,
 select:hover,
 textarea:hover,
 button:hover {
-  border: 0.1rem #19456b solid;
+  border: 0.1rem #16c79a solid;
 }
 button.primary {
-  background-color: #19456b;
+  background-color: #16c79a;
 }
 button.block {
   width: 100%;
