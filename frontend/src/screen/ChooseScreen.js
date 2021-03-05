@@ -38,6 +38,9 @@ export default function ChooseScreen() {
                         </div>
                     </>)}
                 </div>
+                <div className="btn" data-aos={"fade-up"}>
+                        <Link to="/">&larr;</Link>
+                </div>
             </div>
             }
         </div>

@@ -1,7 +1,22 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+    users:[
+        {
+            name:'ADMIN',
+            email:'admin@admin.com',
+            password: bcrypt.hashSync('admin', 8),
+            isAdmin: true
+        },
+        {
+            name:'user',
+            email:'user@user.com',
+            password: bcrypt.hashSync('user1', 8),
+            isAdmin: false
+        }
+    ],
     alat:[
         {
-            _id:'1',
             nama:'Percobaan Tingkat Respirasi pada Serangga',
             tujuan:[
                 "<br>1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga</br>",
@@ -17,7 +32,7 @@ const data = {
                     "<br>8. Lakukan hal yang sama dengan jangkrik yang kedua.</br>"],
             tools:[
                 {
-                    img:'../img/alat/cotton.png',
+                    img:"../img/alat/cotton.png",
                     desc:'Kapas'
                 },
                 {
@@ -55,7 +70,6 @@ const data = {
             ]
         },
         {
-            _id:'2',
             nama:'Cobain',
             tujuan: [
                 "<br>1. Mengetahui banyaknya oksigen yang dibutuhkan oleh serangga</br>",

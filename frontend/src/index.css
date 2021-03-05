@@ -250,6 +250,7 @@ header a {
   background: #cecece;
 }
 .col-3 img{
+  margin-top: 10px;
   width: 40%;
 }
 .min-30 {

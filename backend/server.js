@@ -1,25 +1,29 @@
 import express from 'express';
-import data from './data.js';
+import mongoose from 'mongoose';
 import path from 'path';
+import dotenv from 'dotenv';
+import userRouter from './routers/userRouter.js';
+import alatRouter from './routers/alatRouter.js';
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true}));
 
-app.get('/api/alat/:id', (req, res) => {
-    const alat = data.alat.find((x) => x._id === req.params.id);
-    if (alat) {
-        res.send(alat);
-    } else {
-        res.status(404).send({ message: 'Alat Not Found'})
-    };
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/virtualbiologilab', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
 });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const __dirname = path.resolve();
 
-app.get('/api/alat', (req,res) => {
-    res.send(data.alat);
-});
+app.use('/api/users', userRouter);
+app.use('/api/alat', alatRouter);
 
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) =>
@@ -29,6 +33,10 @@ app.get('*', (req, res) =>
 // app.get('/', ( req, res ) => {
 //     res.send('Server  is ready');
 // });
+
+app.use((err, req, res, next) => {
+    res.status(500).send({ message: err.message })
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
