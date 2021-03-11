@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listAlat } from '../actions/alatAction'
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import {
+    DoubleLeftOutlined,
+} from '@ant-design/icons';
 
 export default function ChooseScreen() {
 
@@ -38,8 +41,8 @@ export default function ChooseScreen() {
                         </div>
                     </>)}
                 </div>
-                <div className="btn" data-aos={"fade-up"}>
-                        <Link to="/">&larr;</Link>
+                <div className="btnArah" data-aos={"fade-up"}>
+                        <Link to="/"><DoubleLeftOutlined /></Link>
                 </div>
             </div>
             }

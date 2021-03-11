@@ -88,9 +88,7 @@ ul {
   margin: 0;
   list-style-type: none;
 }
-li {
-  margin-top: 1rem;
-}
+
 input,
 select,
 textarea,
@@ -103,6 +101,20 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.btnArah{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  padding: 5px 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btnArah a{
+  color: #16c79a;
+}
+.btnArah a:hover{
+  color: #19456b;
+}
 .btn{
   display: inline-block;
   background: #16c79a;
@@ -111,7 +123,6 @@ button {
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
-  margin-left: 10px;
   margin-bottom: 40px;
   transition: 0.5s;
   cursor: pointer;
@@ -122,21 +133,19 @@ button {
 }
 .btnRead{
   display: inline-block;
-  background: #19456b;
+  background: #16c79a;
   color: white;
   padding: 1px 6px;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
-  margin-left: 900px;
+  margin-left: 10px;
   margin-bottom: 20px;
   transition: 0.5s;
   cursor: pointer;
 }
 .btnRead:hover{
-  background: white;
-  color: #19456b;
-  border: .1rem #19456b solid;
+  transform: translateY(-5px);
 }
 
 input:hover,
@@ -161,10 +170,29 @@ button.small {
   border-radius: 50px;
   margin: 0 auto 20px;
 }
+/* Dropdown */
+.dropdown {
+  display: inline-block;
+}
+.dropdown-content p{
+  font-size: 12pt;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  padding: 0.5rem;
+  z-index: 2;
+  background-color: #16c79a;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.3rem;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* Header */
 header {
-  grid-area: header;
   background-color: #16c79a;
   display: flex;
 }
@@ -174,18 +202,22 @@ header a {
 }
 .logo img {
   margin-top: 20px;
-  width: 10%;
+  width: 8%;
   float: left;
   display: flex;
   cursor: pointer;
   min-width: 70px;
 }
-.menu a {
-  font-size: 16pt;
-  margin-top: 12px;
+.menu {
+  margin-top: 15px;
+  display: flex;
+  float: right;
+  text-align: right;
+}
+.menu a{
+  font-size: 12pt;
   margin-bottom: 0;
   padding: 1px 0 0 0;
-  float: right;
   text-decoration: none;
   color: white;
   margin-right: 10px;
@@ -195,28 +227,20 @@ header a {
 .menu p{
   margin-top: 6px;
   margin-bottom: 1px;
-  margin-right: 6px;
 }
 .menu svg{
   padding: 8px;
   transition: .3s;
 }
-.menu svg:hover{
-  align-items: center;
-  color: #11698e;
-}
 .menu a:hover{
-  border-radius: 90px;
-  background: #f8f1f1;
-  color: #11698e;
+  color: #2020a0;
 }
 /* main */
 .row{
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
-  text-align: left;
+  justify-content: space-between;
+  align-items: center;
 }
 .row.center {
   justify-content: center;
@@ -232,8 +256,14 @@ header a {
   text-align: center;
 }
 .col-2 {
-  flex: 2 1 50rem;
+  flex-basis: 50%;
+  min-width: 300px;
   margin-bottom: 30px;
+  display: flex;
+}
+.col-2 img{
+  width: 55%;
+  margin-right: 50px;
 }
 .col-3 {
   flex: 32 1 75rem;
@@ -277,6 +307,58 @@ header a {
   text-align: left;
   margin: 0 auto 5px;
   position: relative;
+}
+.regis a{
+  color: #2020a0;
+}
+/* forms */
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #f9f3f3;
+}
+
+.form-container{
+  margin-top: 3rem;
+  margin-left: 20px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  padding: 2rem;
+  border: .1rem #d1d1d1 solid;
+  border-radius: .5rem;
+  background: #ffffff;
+  z-index: 50;
+}
+
+.form-container li{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+input{
+  padding: 1rem;
+  border: .1rem #d1d1d1 solid;
+  border-radius: .5rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+@media screen and (max-width: 450px){
+  .form{
+    margin-left: 12px;
+  }
+  .col-2 img{
+    visibility: hidden;
+    width: 5%;
+  }
 }
 
 /* footer */

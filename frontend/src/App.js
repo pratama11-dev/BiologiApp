@@ -2,14 +2,30 @@ import './App.css';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import {
   InstagramOutlined,
-  UserOutlined
+  UserOutlined,
+  CloseOutlined,
+  DashboardOutlined
 } from '@ant-design/icons';
 import HomeScreen from './screen/HomeScreen.js';
 import PrepareScreen from './screen/PrepareScreen.js';
 import ChooseScreen from './screen/ChooseScreen';
+import SigninScreen from './screen/SigninScreen';
+import RegisterScreen from './screen/RegisterScreen';
+import { useDispatch, useSelector } from 'react-redux';
+import { signout } from './actions/userAction';
 
 
 function App() {
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const{ userInfo } = userSignin;
+
+  const discpatch = useDispatch();
+  
+  const signoutHandler = () => {
+    discpatch(signout());
+  }
+
   return (
     <BrowserRouter>
       <header className="row">
@@ -20,7 +36,29 @@ function App() {
             </Link>
           </div>
           <nav className="menu">
-            <Link to="/signin"><UserOutlined /><p>Masuk</p></Link>
+            {
+              userInfo ? (
+                <div className="dropdown">
+                  <Link to="#"><UserOutlined />
+                    <p>{userInfo.name}</p>
+                  </Link>
+                  <ul className="dropdown-content">
+                    <li>
+                      <Link to="#signout" onClick={signoutHandler}><CloseOutlined /><p>Keluar</p></Link>
+                    </li>
+                    <li>
+                      <Link to="#signout" onClick={signoutHandler}><CloseOutlined /><p>Keluar</p></Link>
+                    </li>
+                    <li>
+                      <Link to="#signout" onClick={signoutHandler}><DashboardOutlined /><p>Dashboard</p></Link>
+                    </li>
+                  </ul>
+                </div>
+              ) :
+              (
+                <Link to="/signin"><UserOutlined /><p>Masuk</p></Link>
+              )
+            }
           </nav>
         </div>
       </header>
@@ -29,6 +67,8 @@ function App() {
       <main>
         <Route path="/prepare/:id" component={PrepareScreen} />
         <Route path="/choose" component={ChooseScreen} />
+        <Route path="/register" component={RegisterScreen} />
+        <Route path="/signin" component={SigninScreen} />
         <Route path="/" exact={true} component={HomeScreen} />
       </main>
 

@@ -4,13 +4,21 @@ import {
     alatListReducer,
     alatDetailReducer
 } from "./reducers/alatReducer";
+import { userSigninReducer } from "./reducers/userReducer";
 
 
 
-const initialState = {};
+const initialState = {
+    userSignin: {
+        userInfo: localStorage.getItem('userInfo') 
+        ? JSON.parse(localStorage.getItem('userInfo'))
+        : null
+    }
+};
 const reducer = combineReducers({
     alatList: alatListReducer,
-    alatDetail: alatDetailReducer
+    alatDetail: alatDetailReducer,
+    userSignin: userSigninReducer
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

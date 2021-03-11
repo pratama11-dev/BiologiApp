@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { detailAlat } from '../actions/alatAction';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import {
+    DoubleLeftOutlined,
+} from '@ant-design/icons';
 
 export default function PrepareScreen(props) {
 
@@ -22,8 +25,8 @@ export default function PrepareScreen(props) {
         error?(<MessageBox>{error}</MessageBox>)
         : (
             <div className="grid-container">
-                <div className="btn">
-                        <Link to="/choose">&larr;</Link>
+                <div className="btnArah">
+                        <Link to="/choose"><DoubleLeftOutlined /></Link>
                 </div>
                     <div className="container">
                         <div className="tittle" data-aos={"fade-down"} >
