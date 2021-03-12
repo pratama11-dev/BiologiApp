@@ -47,10 +47,7 @@ function App() {
                       <Link to="#signout" onClick={signoutHandler}><CloseOutlined /><p>Keluar</p></Link>
                     </li>
                     <li>
-                      <Link to="#signout" onClick={signoutHandler}><CloseOutlined /><p>Keluar</p></Link>
-                    </li>
-                    <li>
-                      <Link to="#signout" onClick={signoutHandler}><DashboardOutlined /><p>Dashboard</p></Link>
+                      <Link to="/dashboard"><DashboardOutlined /><p>Dashboard</p></Link>
                     </li>
                   </ul>
                 </div>

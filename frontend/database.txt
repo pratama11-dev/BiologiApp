@@ -1,0 +1,1 @@
+mongodb+srv://virtuallabbiologi:virtuallabbiologi@cluster0.bjnye.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
