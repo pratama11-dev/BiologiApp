@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-// import { register } from '../actions/userAction';
+import { register } from '../actions/userAction';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 export default function RegisterScreen(props) {
 
@@ -9,8 +11,9 @@ export default function RegisterScreen(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
+    
     const userRegister = useSelector(state =>state.userRegister);
-    // const {loading, userInfo, error } = userRegister
+    const {loading, userInfo, error } = userRegister
 
     const dispatch = useDispatch();
 
@@ -18,9 +21,18 @@ export default function RegisterScreen(props) {
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        // dispatch(register(name, email, password, rePassword))
+        if (password !== rePassword) {
+            alert('Password and confirm password are not match');
+          } else {
+        dispatch(register(name, email, password, rePassword))
+        }
     }
     
+    useEffect(() => {
+        if (userInfo) {
+          props.history.push(redirect);
+        }
+      }, [props.history, redirect, userInfo]);
 
     return (
         <div className="form">
@@ -34,10 +46,10 @@ export default function RegisterScreen(props) {
                             <li>
                                 <h2>Buat Akun</h2>
                             </li>
-                            {/* <li>
+                            <li>
                                 {loading && <div>Loading...</div>}
                                 {error && <div>{error}</div>}
-                            </li> */}
+                            </li>
                             <li>
                                 <label htmlFor="name">
                                     Nama

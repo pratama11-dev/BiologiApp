@@ -24,10 +24,10 @@ export default function PrepareScreen(props) {
         :
         error?(<MessageBox>{error}</MessageBox>)
         : (
-            <div className="grid-container">
-                <div className="btnArah">
+            <div className="container">
+                {/* <div className="btnArah">
                         <Link to="/choose"><DoubleLeftOutlined /></Link>
-                </div>
+                </div> */}
                     <div className="container">
                         <div className="tittle" data-aos={"fade-down"} >
                             <h1>{alat.nama}</h1>

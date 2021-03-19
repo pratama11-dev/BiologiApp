@@ -19,7 +19,7 @@ export default function ChooseScreen() {
     }, []);
 
     return (
-        <div className="gird-container">
+        <div className="container">
             {loading? <LoadingBox></LoadingBox>
             :
             error?<MessageBox>{error}</MessageBox>

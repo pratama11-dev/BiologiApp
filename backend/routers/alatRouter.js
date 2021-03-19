@@ -2,6 +2,8 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
 import Alat from '../models/alatModel.js';
+import { isAdmin, isAuth } from '../util.js';
+
 
 const alatRouter = express.Router();
 
@@ -28,9 +30,33 @@ alatRouter.get(
       if (alat) {
         res.send(alat);
       } else {
-        res.status(404).send({ message: 'Product Not Found' });
+        res.status(404).send({ message: 'Tidak Menemukan Data' });
       }
     })
   );
+
+  alatRouter.post(
+    '/',
+    isAuth,
+    isAdmin,
+    expressAsyncHandler(async (req, res) => {
+      const alat = new Alat({
+        nama: 'sample' + Date.now,
+        tujuan: 'sample',
+        langkah: 'sample',
+        tools: [{
+          img:'/img/stetoskop.png',
+          desc:'sample'
+        }]
+      });
+      const createdAlat = await alat.save();
+      res.send({ message: 'Membuat Penelitian Baru', alat: createdAlat });
+      // if(createdAlat){
+      //   return res.status(201).send({ message: "Membuat Penelitian Baru", data: createdAlat});
+      // }
+      // return res.status(500).send({ message: "Terjadi Kesalahan Dalam Membuat Data"})
+    })
+  );
+  
 
 export default alatRouter;

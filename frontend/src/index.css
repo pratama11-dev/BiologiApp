@@ -16,18 +16,18 @@ body {
 }
 
 /* Layout */
-/* .grid-container {
+.grid-container {
   display: grid;
   grid-template-areas:
     'header'
     'main'
     'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 7rem 1fr 40rem;
+  grid-template-rows: 10rem 1fr 30rem;
   height: 100%;
-} */
+}
 .container {
-  width: 85%;
+  width: 90%;
   margin: auto;
   overflow: hidden;
   text-align: center;
@@ -163,6 +163,9 @@ button.block {
 button.small {
   font-size: 1.2rem;
 }
+.btncreate{
+  float: right;
+}
 .border{
   width: 180px;
   height: 4px;
@@ -180,11 +183,10 @@ button.small {
 .dropdown-content {
   position: absolute;
   display: none;
-  padding: 0.5rem;
   z-index: 2;
   background-color: #16c79a;
   margin: 0;
-  margin-top: 0.4rem;
+  margin-right: 5px;
   border-radius: 0.3rem;
 }
 .dropdown:hover .dropdown-content {
@@ -193,6 +195,7 @@ button.small {
 
 /* Header */
 header {
+  grid-area: header;
   background-color: #16c79a;
   display: flex;
 }
@@ -212,7 +215,6 @@ header a {
   margin-top: 15px;
   display: flex;
   float: right;
-  text-align: right;
 }
 .menu a{
   font-size: 12pt;
@@ -227,6 +229,7 @@ header a {
 .menu p{
   margin-top: 6px;
   margin-bottom: 1px;
+  text-align: left;
 }
 .menu svg{
   padding: 8px;
@@ -259,7 +262,7 @@ header a {
   flex-basis: 50%;
   min-width: 300px;
   margin-bottom: 30px;
-  display: flex;
+  /* display: flex; */
 }
 .col-2 img{
   width: 55%;
@@ -326,7 +329,7 @@ header a {
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
-  width: 28rem;
+  /* width: 28rem; */
   padding: 2rem;
   border: .1rem #d1d1d1 solid;
   border-radius: .5rem;
@@ -341,6 +344,29 @@ header a {
   margin-top: 1rem;
 }
 
+/* Table */
+.table{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th{
+  text-align: left;
+}
+
+tbody>tr:nth-child(odd){
+  background-color: #d1d1d1;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table button {
+  margin: 0 0.2rem;
+}
+
 input{
   padding: 1rem;
   border: .1rem #d1d1d1 solid;
@@ -351,22 +377,12 @@ input{
   text-align: center;
 }
 
-@media screen and (max-width: 450px){
-  .form{
-    margin-left: 12px;
-  }
-  .col-2 img{
-    visibility: hidden;
-    width: 5%;
-  }
-}
-
 /* footer */
 footer {
   grid-area: footer;
   background-color: #16c79a;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 0;
   padding: 0 0 10px;
 }
@@ -383,7 +399,7 @@ footer {
 }
 .footer-col-2{
   flex-basis: 20%;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 .follow a{
   color : white;
@@ -404,3 +420,12 @@ footer {
   text-align: center;
 }
 
+@media screen and (max-width: 450px){
+  .col-2 img{
+    visibility: hidden;
+    width: 1%;
+  }
+  .grid-container {
+    grid-template-rows: 10rem 1fr 18rem;
+  }
+}

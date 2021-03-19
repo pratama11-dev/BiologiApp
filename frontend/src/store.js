@@ -2,9 +2,15 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from 'redux-thunk';
 import { 
     alatListReducer,
-    alatDetailReducer
+    alatDetailReducer,
+    alatCreateReducer,
+    alatSaveReducer,
+    alatDeleteReducer
 } from "./reducers/alatReducer";
-import { userSigninReducer } from "./reducers/userReducer";
+import { 
+    userRegisterReducer, 
+    userSigninReducer 
+} from "./reducers/userReducer";
 
 
 
@@ -18,7 +24,11 @@ const initialState = {
 const reducer = combineReducers({
     alatList: alatListReducer,
     alatDetail: alatDetailReducer,
-    userSignin: userSigninReducer
+    userSignin: userSigninReducer,
+    userRegister: userRegisterReducer,
+    alatCreate: alatCreateReducer,
+    alatSave: alatSaveReducer,
+    alatDelete: alatDeleteReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
