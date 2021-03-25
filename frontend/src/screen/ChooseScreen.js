@@ -31,17 +31,19 @@ export default function ChooseScreen() {
                 </div>
                 <div className="topik">
                     {alat.map((alat) => <>
-                        <div className="tittle" data-aos={"fade-down"} key={alat._id}>
-                            <h3 key={alat._id}>{alat.nama}</h3>
-                        </div>
-                        <div className="btn" data-aos={"fade-right"}>
-                            <Link to={"/prepare/" + alat._id}>
-                                Coba Sekarang!
-                            </Link>
+                        <div key={alat.id}>
+                            <div className="tittle">
+                                <h3>{alat.nama}</h3>
+                            </div>
+                            <div className="btn">
+                                <Link to={"/prepare/" + alat._id}>
+                                    Coba Sekarang!
+                                </Link>
+                            </div>
                         </div>
                     </>)}
                 </div>
-                <div className="btnArah" data-aos={"fade-up"}>
+                <div className="btnArah">
                         <Link to="/"><DoubleLeftOutlined /></Link>
                 </div>
             </div>

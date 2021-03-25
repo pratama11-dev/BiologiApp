@@ -163,9 +163,36 @@ button.block {
 button.small {
   font-size: 1.2rem;
 }
+
 .btncreate{
   float: right;
 }
+
+.btnDelete{
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btnEdit{
+  display: inline-block;
+  background: #11698e;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .border{
   width: 180px;
   height: 4px;

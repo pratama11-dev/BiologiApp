@@ -4,6 +4,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import userRouter from './routers/userRouter.js';
 import alatRouter from './routers/alatRouter.js';
+import uploadRouter from './routers/uploadRouter.js';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const __dirname = path.resolve();
 
+app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/alat', alatRouter);
 
@@ -29,6 +31,8 @@ app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 );
+
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 // app.get('/', ( req, res ) => {
 //     res.send('Server  is ready');

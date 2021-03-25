@@ -5,7 +5,8 @@ import {
     alatDetailReducer,
     alatCreateReducer,
     alatSaveReducer,
-    alatDeleteReducer
+    alatDeleteReducer,
+    alatUpdateReducer
 } from "./reducers/alatReducer";
 import { 
     userRegisterReducer, 
@@ -29,6 +30,7 @@ const reducer = combineReducers({
     alatCreate: alatCreateReducer,
     alatSave: alatSaveReducer,
     alatDelete: alatDeleteReducer,
+    alatUpdate: alatUpdateReducer
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

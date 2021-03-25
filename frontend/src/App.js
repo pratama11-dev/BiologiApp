@@ -43,11 +43,26 @@ function App() {
               </Link>
             </div>
             <nav className="menu">
+              {userInfo && userInfo.isAdmin && (
+                  <div className="dropdown">
+                    <Link to="#"><WarningOutlined />
+                      <p>Only Admin </p>
+                    </Link>
+                    <ul className="dropdown-content">
+                      <li>
+                        <Link to="/listpenelitian"><LaptopOutlined  /><p>Buat Penelitian</p></Link>
+                      </li>
+                      <li>
+                        <Link to="/dashboard"><DashboardOutlined /><p>Dashboard</p></Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               {
                 userInfo ? (
                   <div className="dropdown">
                     <Link to="#"><UserOutlined />
-                      <p>{userInfo.name}</p>
+                      <p>Hi, {userInfo.name}</p>
                     </Link>
                     <ul className="dropdown-content">
                       {/* <li>
@@ -66,21 +81,6 @@ function App() {
                   <Link to="/signin"><UserOutlined /><p>Masuk</p></Link>
                 )
               }
-              {userInfo && userInfo.isAdmin && (
-                <div className="dropdown">
-                  <Link to="#"><WarningOutlined />
-                    <p>Only Admin </p>
-                  </Link>
-                  <ul className="dropdown-content">
-                    <li>
-                      <Link to="/listpenelitian"><LaptopOutlined  /><p>Buat Penelitian</p></Link>
-                    </li>
-                    <li>
-                      <Link to="/dashboard"><DashboardOutlined /><p>Dashboard</p></Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
             </nav>
           </div>
         </header>

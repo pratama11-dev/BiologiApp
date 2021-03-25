@@ -29,23 +29,23 @@ export default function PrepareScreen(props) {
                         <Link to="/choose"><DoubleLeftOutlined /></Link>
                 </div> */}
                     <div className="container">
-                        <div className="tittle" data-aos={"fade-down"} >
+                        <div className="tittle">
                             <h1>{alat.nama}</h1>
                         </div>
                         <div className="topik">
                             <div className="border"></div>
                             <div className="col-2">
-                                <div className="judul" data-aos={"fade-left"}>
+                                <div className="judul">
                                     <h2>Tujuan</h2>
                                     <p dangerouslySetInnerHTML={{__html:alat.tujuan}}></p>
                                 </div>
                             </div>
-                            <div className="judul" data-aos={"fade-up"}>
+                            <div className="judul">
                                 <h2>Alat dan Bahan</h2>
                             </div>
-                            <div className="row" data-aos={"fade-down"}>
+                            <div className="row">
                                 {alat.tools.map((tools) => <> 
-                                    <div className="col-3">
+                                    <div className="col-3" key={tools.id}>
                                         <img src={tools.img} alt=""/>
                                         <p>{tools.desc}</p>                            
                                     </div>
@@ -83,7 +83,7 @@ export default function PrepareScreen(props) {
                                     <p><i>Stopwatch</i></p>
                                 </div> */}
                             </div>
-                            <div className="judul" data-aos={"fade-down"}>
+                            <div className="judul">
                                 <h2>Langkah</h2>
                                 <p dangerouslySetInnerHTML={{__html:alat.langkah}}></p>
                                 {/* <p>1. Timbanglah masing-masing 2 ekor jangkrik tersebut
@@ -99,7 +99,7 @@ export default function PrepareScreen(props) {
                             </div>
                         </div>
                         
-                        <div className="btn"data-aos={"fade-up"}>
+                        <div className="btn">
                                 <Link to={'/Simulation/'}>Simulasi →</Link>
                             </div>
                     </div>

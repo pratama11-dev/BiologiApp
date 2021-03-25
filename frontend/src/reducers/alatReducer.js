@@ -6,6 +6,7 @@ import {
     ALAT_DELETE_FAIL,
     ALAT_DELETE_REQUEST,
     ALAT_DELETE_SUCCESS,
+    ALAT_DELETE_RESET,
     ALAT_DETAILS_FAIL,
     ALAT_DETAILS_REQUEST,
     ALAT_DETAILS_SUCCESS,
@@ -14,7 +15,11 @@ import {
     ALAT_LIST_SUCCESS, 
     ALAT_SAVE_FAIL, 
     ALAT_SAVE_REQUEST,
-    ALAT_SAVE_SUCCESS} 
+    ALAT_SAVE_SUCCESS,
+    ALAT_UPDATE_REQUEST,
+    ALAT_UPDATE_SUCCESS,
+    ALAT_UPDATE_FAIL,
+    ALAT_UPDATE_RESET} 
     from "../constants/alatConstants";
 
 export const alatListReducer = (
@@ -64,20 +69,20 @@ export const alatCreateReducer = (state = {}, action) => {
     }
 };
 
-// export const alatUpdateReducer = (state = {}, action) => {
-//     switch (action.type) {
-//       case ALAT_UPDATE_REQUEST:
-//         return { loading: true };
-//       case ALAT_UPDATE_SUCCESS:
-//         return { loading: false, success: true };
-//       case ALAT_UPDATE_FAIL:
-//         return { loading: false, error: action.payload };
-//       case ALAT_UPDATE_RESET:
-//         return {};
-//       default:
-//         return state;
-//     }
-//   };
+export const alatUpdateReducer = (state = {}, action) => {
+    switch (action.type) {
+      case ALAT_UPDATE_REQUEST:
+        return { loading: true };
+      case ALAT_UPDATE_SUCCESS:
+        return { loading: false, success: true };
+      case ALAT_UPDATE_FAIL:
+        return { loading: false, error: action.payload };
+      case ALAT_UPDATE_RESET:
+        return {};
+      default:
+        return state;
+    }
+  };
 
 export function alatSaveReducer(state = { alat: {} }, action) {
 
@@ -93,14 +98,16 @@ export function alatSaveReducer(state = { alat: {} }, action) {
     }
   }
 
-export function alatDeleteReducer(state = { alat: {} }, action) {
+export function alatDeleteReducer(state = {}, action) {
     switch (action.type) {
       case ALAT_DELETE_REQUEST:
         return { loading: true };
       case ALAT_DELETE_SUCCESS:
-        return { loading: false, alat: action.payload };
+        return { loading: false, alat: action.payload, success: true};
       case ALAT_DELETE_FAIL:
-        return { loading: false, error: action.payload }
+        return { loading: false, error: action.payload };
+      case ALAT_DELETE_RESET:
+        return {};
       default:
         return state;
     }
