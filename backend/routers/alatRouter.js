@@ -44,10 +44,19 @@ alatRouter.post(
       nama: 'sample ' + Date.now(),
       tujuan: 'sample',
       langkah: 'sample',
-      tools: [{
-        img:'/img/stetoskop.png',
-        desc:'sample'
-      }]
+      tools: [
+        {
+          img:'/img/stetoskop.png',
+          desc:'sample'
+        },
+        {
+          img:'/img/stetoskop.png',
+          desc:'sample'
+        },{
+          img:'/img/stetoskop.png',
+          desc:'sample'
+        }
+      ]
     });
     const createdAlat = await alat.save();
     res.send({ message: 'Membuat Penelitian Baru', alat: createdAlat });
@@ -69,8 +78,12 @@ alatRouter.put(
       alat.nama = req.body.nama;
       alat.tujuan = req.body.tujuan;
       alat.langkah = req.body.langkah;
-      alat.img = req.body.img;
-      alat.desc = req.body.desc;      
+      alat.tools = [{
+        img : req.body.img,
+        desc : req.body.desc
+      }];
+      // alat.img = req.body.img;
+      // alat.desc = req.body.desc;      
       const updatedAlat = await alat.save();
       res.send({ message: 'Alat Updated', alat: updatedAlat });
     } else {

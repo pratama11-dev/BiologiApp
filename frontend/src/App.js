@@ -19,6 +19,7 @@ import DashboardScreen from './screen/DashboardScreen';
 import AdminRoute from './components/AdminRoute';
 import PenelitianListScreen from './screen/PenelitianListScreen';
 import PenelitianEditScreen from './screen/PenelitianEditScreen';
+import SimulasiScreen from './screen/SimulasiScreen';
 
 
 function App() {
@@ -94,6 +95,8 @@ function App() {
             component={PenelitianEditScreen}
             exact
           />
+
+          <Route path="/simulation" component={SimulasiScreen} exact/>
 
           <Route path="/choose" component={ChooseScreen} />
           <Route path="/register" component={RegisterScreen} />

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { detailAlat, updatedAlat } from '../actions/alatAction';
+import { detailAlat, listAlat, updatedAlat } from '../actions/alatAction';
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import LoadingBox from '../components/LoadingBox';
@@ -20,10 +20,7 @@ export default function PrepareEditScreen(props) {
     //     setTujuan(editor.getData());
     // }
 
-    const dispatch = useDispatch()
-
-    const alatDetail = useSelector(state => state.alatDetail);
-    const {loading, error, alat, tools} = alatDetail;
+    const dispatch = useDispatch();
 
     const alatUpdate = useSelector((state) => state.alatUpdate);
     const {
@@ -31,6 +28,10 @@ export default function PrepareEditScreen(props) {
         error: errorUpdate,
         success: successUpdate,
     } = alatUpdate;
+
+    const alatDetail = useSelector(state => state.alatDetail);
+    const {loading, error, alat, tools} = alatDetail;
+
 
     useEffect(() => {
         if(successUpdate){
@@ -43,8 +44,13 @@ export default function PrepareEditScreen(props) {
             setNama(alat.nama);
             setTujuan(alat.tujuan);
             setLangkah(alat.langkah);
-            setImg(alat.img);
-            setDesc(alat.desc);
+            setImg({...alat,[tools]: {img}});
+            setDesc({...alat,[tools]: {desc}});
+            // setImg(alat.img);
+            // setDesc(alat.desc);
+        }
+        return () => {
+            dispatch(listAlat())
         }
     },[
         alat,
@@ -53,7 +59,7 @@ export default function PrepareEditScreen(props) {
         tools,
         successUpdate,
         props.history
-    ])
+    ]);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -177,17 +183,15 @@ export default function PrepareEditScreen(props) {
                         </li>
                         <li>
                             <label htmlFor="desc">Description</label>
-                            <textarea
+                            <input
                                 id="desc"
-                                rows="1"
                                 type="text"
                                 placeholder="Masukkan Deskripsi Gambar"
                                 value={desc}
                                 onChange={(e) => setDesc(e.target.value)}
-                            ></textarea>
+                            ></input>
                         </li>
                         <li>
-                            <label></label>
                             <button className="btn" type="submit">
                                 Update
                             </button>

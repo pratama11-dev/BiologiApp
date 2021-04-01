@@ -82,9 +82,10 @@ export default function PenelitianListScreen(props) {
             </div>
             <div className="btncreate">
                 <button type="button" className="btn" onClick={createHandler}>
-                    Create Product
+                    Buat Penelitian
                 </button>
             </div>
+            
             {loadingDelete && <LoadingBox></LoadingBox>}
             {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
 
@@ -101,13 +102,13 @@ export default function PenelitianListScreen(props) {
                             <tr>
                                 <th>ID</th>
                                 <th>JUDUL PENELITIAN</th>
-                                <th>TANGGAL</th>
+                                <th>TANGGAL BUAT</th>
                                 <th>TANGGAL UPDATE</th>
                                 <th>ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {alat.map((alat) => (
+                            {alat.map((alat) => <>
                                 <tr key={alat._id}>
                                     <td>{alat._id}</td>
                                     <td>{alat.nama}</td>
@@ -140,7 +141,7 @@ export default function PenelitianListScreen(props) {
                                         </button>
                                     </td>
                                 </tr>
-                            ))}
+                            </>)}
                         </tbody>
                     </table>
                 </>

@@ -28,9 +28,9 @@ export const alatListReducer = (
     ) => {
     switch(action.type){
         case ALAT_LIST_REQUEST:
-            return {loading : true };
+            return {loading : true, alat: [] };
         case ALAT_LIST_SUCCESS:
-            return {loading : false, alat: action.payload}
+            return {loading : false, alat: action.payload, success: true}
         case ALAT_LIST_FAIL:
             return {loading : false, error: action.payload}
         default:
@@ -74,7 +74,7 @@ export const alatUpdateReducer = (state = {}, action) => {
       case ALAT_UPDATE_REQUEST:
         return { loading: true };
       case ALAT_UPDATE_SUCCESS:
-        return { loading: false, success: true };
+        return { loading: false, success: true, alat: action.payload };
       case ALAT_UPDATE_FAIL:
         return { loading: false, error: action.payload };
       case ALAT_UPDATE_RESET:

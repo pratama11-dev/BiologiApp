@@ -291,6 +291,15 @@ header a {
   margin-bottom: 30px;
   /* display: flex; */
 }
+.col-2-simulasi{
+  flex-basis: 20%;
+  min-width: 50px;
+}
+.col-2-simulasi img{
+  width: 15%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
 .col-2 img{
   width: 55%;
   margin-right: 50px;
