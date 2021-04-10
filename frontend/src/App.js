@@ -86,8 +86,6 @@ function App() {
           </div>
         </header>
       
-    
-
         <main>
           <Route path="/prepare/:id" component={PrepareScreen} exact/>
           <Route 
@@ -129,7 +127,11 @@ function App() {
                   <h3>Dikembangkan Oleh :</h3>
                     <div className="follow">
                       <a href="https://www.instagram.com/adithyanuzpratama/">
-                        <InstagramOutlined /> TIM
+                        <InstagramOutlined /> adithyanuzpratama
+                        <br />
+                      </a>
+                      <a href="https://www.instagram.com/resiliasurya/">
+                        <InstagramOutlined /> resiliasurya
                         <br />
                       </a>
                     </div>

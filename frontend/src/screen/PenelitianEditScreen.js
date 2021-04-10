@@ -6,6 +6,10 @@ import { detailAlat, listAlat, updatedAlat } from '../actions/alatAction';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import {
+    DeleteOutlined,
+    PlusOutlined
+} from '@ant-design/icons'
 import { ALAT_UPDATE_RESET } from '../constants/alatConstants';
 
 export default function PrepareEditScreen(props) {
@@ -15,6 +19,12 @@ export default function PrepareEditScreen(props) {
     const [langkah, setLangkah] = useState('');
     const [img, setImg] = useState('');
     const [desc, setDesc] = useState('');
+    // const [img, setImg] = useState([{img:''}]);
+    // const [desc, setDesc] = useState([{desc:''}]);
+    const [toolss, setToolss] = useState([
+        {img:'', desc:''},
+    ]);
+
     
     // const handleChange = (e,editor)=>{
     //     setTujuan(editor.getData());
@@ -32,35 +42,6 @@ export default function PrepareEditScreen(props) {
     const alatDetail = useSelector(state => state.alatDetail);
     const {loading, error, alat, tools} = alatDetail;
 
-
-    useEffect(() => {
-        if(successUpdate){
-            props.history.push('/listpenelitian')
-        }
-        if(!alat || alat._id !== alatId || successUpdate){
-            dispatch({type: ALAT_UPDATE_RESET});
-            dispatch(detailAlat(alatId));
-        }else{
-            setNama(alat.nama);
-            setTujuan(alat.tujuan);
-            setLangkah(alat.langkah);
-            setImg({...alat,[tools]: {img}});
-            setDesc({...alat,[tools]: {desc}});
-            // setImg(alat.img);
-            // setDesc(alat.desc);
-        }
-        return () => {
-            dispatch(listAlat())
-        }
-    },[
-        alat,
-        dispatch,
-        alatId,
-        tools,
-        successUpdate,
-        props.history
-    ]);
-
     const submitHandler = (e) => {
         e.preventDefault();
         // TODO: dispatch update alat
@@ -75,6 +56,77 @@ export default function PrepareEditScreen(props) {
             })
         );
     };
+
+    const handleAddFields = () => {
+        // const values = [...toolss];
+        // values.push({img:'',desc:''});
+        // setToolss(values);
+        
+        setToolss([...toolss, {img:'',desc:''}])
+        
+        // setImg([img])
+        // setDesc([desc])
+        
+        // e.preventDefault();
+        // setImg([img])
+        // setDesc([desc])
+    };
+
+    const handleRemoveFields = index => {
+        const values = [...toolss];
+        values.splice(index, 1);
+        setToolss(values);
+    };
+
+    const handleChangeInput = ( desc, event) => {
+        const values = toolss.map(i => {
+            if(desc === i.desc) {
+                i[event.target.name] = event.target.value
+            }
+            return i;
+        })
+        // const {name, value} = event.target;
+        // const values = [...toolss];
+        // values[index][name] = value;
+
+        // const values = [...toolss];
+        // if(event.target.name === "desc"){
+        //     values[index].desc = event.target.value;
+        // } 
+
+        // const values = [...toolss];
+        // values[i][event.target.id] = event.target.value;
+        
+        setToolss(values);
+    }
+
+    useEffect(() => {
+        if(successUpdate){
+            props.history.push('/listpenelitian')
+        }
+        if(!alat || alat._id !== alatId || successUpdate){
+            dispatch({type: ALAT_UPDATE_RESET});
+            dispatch(detailAlat(alatId));
+        }else{
+            setNama(alat.nama);
+            setTujuan(alat.tujuan);
+            setLangkah(alat.langkah);
+            // setImg({...alat,[tools]: {img}});
+            // setDesc({...alat,[tools]: {desc}});
+            setImg(alat.img);
+            setDesc(alat.desc);
+        }
+        return () => {
+            dispatch(listAlat())
+        }
+    },[
+        alat,
+        dispatch,
+        alatId,
+        tools,
+        successUpdate,
+        props.history
+    ]);
 
     
     const userSignin = useSelector((state) => state.userSignin);
@@ -159,29 +211,74 @@ export default function PrepareEditScreen(props) {
                             ></input>
                         </li>
                         <li>
-                            <label htmlFor="image">Gambar</label>
-                            <input
-                                id="img"
-                                type="text"
-                                placeholder="Masukkan Gambar"
-                                value={img}
-                                onChange={(e) => setImg(e.target.value)}
-                            ></input>
+                            {alat.tools.map((tools) => <>
+                                <label htmlFor="image">Gambar :</label>
+                                <input
+                                    id="img"
+                                    type="text"
+                                    placeholder="Masukkan Gambar"
+                                    value={tools.img}
+                                    onChange={(e) => setImg(e.target.value)}
+                                ></input>
+                                <label htmlFor="desc">Description :</label>
+                                <input
+                                    id="desc"
+                                    type="text"
+                                    placeholder="Masukkan Deskripsi Gambar"
+                                    value={tools.desc}
+                                    onChange={(e) => setDesc(e.target.value)}
+                                ></input>
+                                {/* <button onClick={() => handleRemoveFields(img.id)}>
+                                    <DeleteOutlined />
+                                </button>
+                                <button onClick={handleAddFields}>
+                                    <PlusOutlined />
+                                </button> */}
+                            </>)}
                         </li>
                         <li>
-                            <label htmlFor="imageFile">Gambar File</label>
-                            <input
-                                type="file"
-                                id="imageFile"
-                                label="Pilih Gambar"
-                                onChange={uploadFileHandler}
-                            ></input>
-                            {loadingUpload && <LoadingBox></LoadingBox>}
-                            {errorUpload && (
-                                <MessageBox variant="danger">{errorUpload}</MessageBox>
-                            )}
+                            <p>Tambah Data :</p>
+                            {toolss.map((toolss) => <>
+                                {/* <label htmlFor="image">Gambar :</label>
+                                <input
+                                    id="img"
+                                    type="text"
+                                    placeholder="Masukkan Gambar"
+                                    value={img}
+                                    onChange={(e) => setImg(e.target.value)}
+                                ></input> */}
+                                <label htmlFor="desc">Description</label>
+                                <input
+                                    name="desc"
+                                    id="desc"
+                                    type="text"
+                                    placeholder="Masukkan Deskripsi Gambar"
+                                    value={toolss.desc}
+                                    onChange={ event => handleChangeInput(toolss.desc,event)}
+                                    // onChange={(e) => setDesc(e.target.value)}
+                                ></input>
+                                <label htmlFor="imageFile">Gambar File</label>
+                                <input
+                                    type="file"
+                                    id="imageFile"
+                                    label="Pilih Gambar"
+                                    onChange={uploadFileHandler}
+                                ></input>
+                                {loadingUpload && <LoadingBox></LoadingBox>}
+                                {errorUpload && (
+                                    <MessageBox variant="danger">{errorUpload}</MessageBox>
+                                )}
+                                <div className="col-2">
+                                    <button className="btnDelete" onClick={() => handleRemoveFields(toolss.img)}>
+                                        <DeleteOutlined />
+                                    </button>
+                                    <button className="btn" onClick={handleAddFields}>
+                                        <PlusOutlined />
+                                    </button>
+                                </div>
+                            </>)}
                         </li>
-                        <li>
+                        {/* <li>
                             <label htmlFor="desc">Description</label>
                             <input
                                 id="desc"
@@ -190,7 +287,7 @@ export default function PrepareEditScreen(props) {
                                 value={desc}
                                 onChange={(e) => setDesc(e.target.value)}
                             ></input>
-                        </li>
+                        </li> */}
                         <li>
                             <button className="btn" type="submit">
                                 Update

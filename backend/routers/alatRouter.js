@@ -49,13 +49,6 @@ alatRouter.post(
           img:'/img/stetoskop.png',
           desc:'sample'
         },
-        {
-          img:'/img/stetoskop.png',
-          desc:'sample'
-        },{
-          img:'/img/stetoskop.png',
-          desc:'sample'
-        }
       ]
     });
     const createdAlat = await alat.save();

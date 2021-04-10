@@ -50,58 +50,16 @@ export default function PrepareScreen(props) {
                                         <p>{tools.desc}</p>                            
                                     </div>
                                 </>)}
-                                {/* <div className="col-3">
-                                    <img src="../img/alat/nasal-spray.png"/>
-                                    <p>Eostin</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/pipette.png"/>
-                                    <p>Pipet</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/vaselin.png"/>
-                                    <p>Vaseline</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/flask.png"/>
-                                    <p>Kristal NaOH</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/chemistry.png"/>
-                                    <p>Respirometer</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/cricket.png"/>
-                                    <p>2 Jangkrik</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/weighing-machine.png"/>
-                                    <p>Timbangan</p>
-                                </div>
-                                <div className="col-3">
-                                    <img src="../img/alat/chronometer.png"/>
-                                    <p><i>Stopwatch</i></p>
-                                </div> */}
                             </div>
-                            <div className="judul">
+                            {/* <div className="judul">
                                 <h2>Langkah</h2>
                                 <p dangerouslySetInnerHTML={{__html:alat.langkah}}></p>
-                                {/* <p>1. Timbanglah masing-masing 2 ekor jangkrik tersebut
-                                    <br />2. Masukan Kristal NaOH / KOH ke dalam selapis kapas , lalu masukan ke dalam tabung
-                                            respirometer
-                                    <br />3. Masukan jangkrik pertama ke dalam tabung respirometer
-                                    <br />4. Pasanglah tutup tabung respirometer yang mempunyai pipa kapiler berskala
-                                    <br />5. Lapisilah sambungan antara tutup dan tabung respirometer dengan vaselin
-                                    <br />6. Setelah itu, masukan setetes eosin pada kedua pipa kapiler berskala setiap 5 menit
-                                    <br />7. Catatlah hasil pengamatan dalam tabel
-                                    <br />8. Lakukan hal yang sama dengan jangkrik yang kedua.
-                                </p> */}
-                            </div>
+                            </div> */}
                         </div>
                         
                         <div className="btn">
-                                <Link to={'/simulation/'}>Simulasi →</Link>
-                            </div>
+                            <Link to={'/simulation/'}>Simulasi →</Link>
+                        </div>
                     </div>
             </div>
         )}

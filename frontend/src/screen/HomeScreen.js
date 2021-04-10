@@ -33,7 +33,7 @@ function HomeScreen(props) {
             </div>
     
             <div className="container">
-                {/* <div className="topik">
+                <div className="topik">
                     <div className="tittle">
                         <h1>Topick</h1>
                     </div>
@@ -59,7 +59,7 @@ function HomeScreen(props) {
                         </p>
                         <div className="btnRead">Read More</div>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     </>
