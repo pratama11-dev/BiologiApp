@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import {
     DoubleLeftOutlined,
@@ -11,6 +11,18 @@ export default function SimulasiResManusia() {
     
     // const alatDetail = useSelector( state => state.alatDetail)
     // const {loading, error, alat } = alatDetail
+
+    const toNumber = (num) => Number(num.toFixed(2));
+    
+    const [pertama, setPertama] = useState(0);
+    const [kedua, setKedua] = useState(0);
+    const [ketiga, setKetiga] = useState(0);
+
+    const randomNumber =toNumber(Math.random() * 100);
+    const randomeNumber = toNumber(Math.random() * 100);
+
+    const randomBerat =toNumber(Math.random() * 100);
+    const randomeBerat = toNumber(Math.random() * 100);
 
     return (
         <div className="container">
@@ -25,18 +37,18 @@ export default function SimulasiResManusia() {
                             <p />1. Mengukur masa probandus laki-laki yang akan melakukan percobaan sebelum melakukan aktivitas
                                 <div className="col-2-simulasi">
                                     <img src="../img/alat/beratlaki.gif"/>
-                                    {/* <ul>
-                                        <label htmlFor="nilaiB">Nilai Berat : </label>
-                                        <input
-                                            id="nilaiB"
-                                            type="text"
-                                            placeholder="Masukkan Nilai Berat"
-                                        ></input>
-                                    </ul> */}
+                                    <ul>
+                                        <label htmlFor="nilaiB">Nilai Berat Probandus Laki-Laki: </label>
+                                        <p><b>{randomeNumber} Kg</b></p>
+                                    </ul>
                                 </div>
                             <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan sebelum melakukan aktivitas
                                 <div className="col-2-simulasi">
                                     <img src="../img/alat/beratcewe.gif"/>
+                                    <ul>
+                                        <label htmlFor="nilaiB">Nilai Berat Probandus Perempuan: </label>
+                                        <p><b>{randomNumber} Kg</b></p>
+                                    </ul>
                                 </div>
                             <p />3. Mengisi gallon dengan air
                                 <div className="col-2-simulasi">
@@ -56,26 +68,26 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />7.	Nafas dihembuskan dalam satu tarikan nafas
                             <p />8.	Catat hasil pengukuran  yang didapatkan.
-                            <p />9.	Lakukakn hal tersebut pada probandus perempuan.
+                            <p />9.	Lakukakan hal tersebut pada probandus perempuan.
                             <p />10. Kemudian bandingkan hasil probandus laki-laki dan perempuan
                         </div>
                         <div className="judul">
                         <h2 />Praktikum B
                             <p />1. Mengukur masa probandus laki-laki yang akan melakukan percobaan setelah melakukan aktivitas berlari
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/timbangan.gif"/>
+                                    <img src="../img/alat/beratlaki.gif"/>
                                     <ul>
-                                        <label htmlFor="nilaiB">Nilai Berat : </label>
-                                        <input
-                                            id="nilaiB"
-                                            type="text"
-                                            placeholder="Masukkan Nilai Berat"
-                                        ></input>
+                                        <label htmlFor="nilaiB">Nilai Berat Probandus Laki-Laki: </label>
+                                        <p><b>{randomBerat} Kg</b></p>
                                     </ul>
                                 </div>
                             <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan setelah melakukan aktivitas berlari
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/tetes.gif"/>
+                                    <img src="../img/alat/beratcewe.gif"/>
+                                    <ul>
+                                        <label htmlFor="nilaiB">Nilai Berat Probandus Perempuan: </label>
+                                        <p><b>{randomeBerat} Kg</b></p>
+                                    </ul>
                                 </div>
                             <p />3. Mengisi gallon dengan air
                                 <div className="col-2-simulasi">
@@ -95,7 +107,7 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />7.	Nafas dihembuskan dalam satu tarikan nafas
                             <p />8.	Catat hasil pengukuran  yang didapatkan.
-                            <p />9.	Lakukakn hal tersebut pada probandus perempuan.
+                            <p />9.	Lakukakan hal tersebut pada probandus perempuan.
                             <p />10. Kemudian bandingkan hasil probandus laki-laki dan perempuan
                         </div>
                     </div>

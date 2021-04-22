@@ -294,12 +294,22 @@ header a {
 .col-2-simulasi{
   flex-basis: 20%;
   min-width: 50px;
-  display: flex;
   margin-top: 50px;
+  display: flex;
 }
 .col-2-simulasi img{
   width: 50%;
+  height: fit-content;
   margin-left: 60px;
+}
+.col-2-tombol{
+  flex-basis: 20%;
+  min-width: 50px;
+  margin-top: 50px;
+  display: flex;
+}
+.col-2-tombol ul{
+  padding: 10px;
 }
 .col-2 img{
   width: 55%;
