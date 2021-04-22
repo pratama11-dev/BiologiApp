@@ -20,6 +20,8 @@ import AdminRoute from './components/AdminRoute';
 import PenelitianListScreen from './screen/PenelitianListScreen';
 import PenelitianEditScreen from './screen/PenelitianEditScreen';
 import SimulasiScreen from './screen/SimulasiScreen';
+import PercobaanScreen from './screen/PercobaanScreen';
+import SimulasiResManusia from './screen/SimulasiResManusia';
 
 
 function App() {
@@ -94,7 +96,9 @@ function App() {
             exact
           />
 
-          <Route path="/simulation" component={SimulasiScreen} exact/>
+          <Route path="/simulationSerangga" component={SimulasiScreen} exact/>
+          <Route path="/simulationManusia" component={SimulasiResManusia} exact/>
+          <Route path="/percobaan" component={PercobaanScreen} exact/>
 
           <Route path="/choose" component={ChooseScreen} />
           <Route path="/register" component={RegisterScreen} />

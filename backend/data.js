@@ -52,7 +52,7 @@ const data = {
                     desc:'Kristal NaOH'
                 },
                 {
-                    img:'../img/alat/chemistry.png',
+                    img:'../img/alat/resp.png',
                     desc:'Respirometer'
                 },
                 {
@@ -100,41 +100,29 @@ const data = {
             ],
             tools:[
                 {
-                    img:'../img/alat/cotton.png',
-                    desc:'Kapas'
-                },
-                {
-                    img:'../img/alat/nasal-spray.png',
-                    desc:'Eostin'
-                },
-                {
-                    img:'../img/alat/pipette.png',
-                    desc:'Pipet'
-                },
-                {
-                    img:'../img/alat/vaselin.png',
-                    desc:'Vaseline'
-                },
-                {
-                    img:'../img/alat/flask.png',
-                    desc:'Kristal NaOH'
-                },
-                {
-                    img:'../img/alat/chemistry.png',
-                    desc:'Respirometer'
-                },
-                {
-                    img:'../img/alat/cricket.png',
-                    desc:'2 Jangkrik'
-                },
-                {
                     img:'../img/alat/weighing-machine.png',
                     desc:'Timbangan'
                 },
                 {
-                    img:'../img/alat/chronometer.png',
-                    desc:'Stopwatch'
+                    img:'../img/alat/selang.png',
+                    desc:'Selang'
                 },
+                {
+                    img:'../img/alat/galon.png',
+                    desc:'Galon Bening'
+                },
+                {
+                    img:'../img/alat/ember.png',
+                    desc:'Ember'
+                },
+                {
+                    img:'../img/alat/orang.png',
+                    desc:'Prombandus Laki-laki dan Perempuan'
+                },
+                {
+                    img:'../img/alat/spidol.png',
+                    desc:'Spidol'
+                }
             ]
         },
     ]

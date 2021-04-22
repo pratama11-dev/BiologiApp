@@ -21,7 +21,7 @@ export default function PrepareEditScreen(props) {
     const [desc, setDesc] = useState('');
     // const [img, setImg] = useState([{img:''}]);
     // const [desc, setDesc] = useState([{desc:''}]);
-    const [toolss, setToolss] = useState([
+    const [tools, setTools] = useState([
         {img:'', desc:''},
     ]);
 
@@ -40,7 +40,7 @@ export default function PrepareEditScreen(props) {
     } = alatUpdate;
 
     const alatDetail = useSelector(state => state.alatDetail);
-    const {loading, error, alat, tools} = alatDetail;
+    const {loading, error, alat} = alatDetail;
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -58,11 +58,11 @@ export default function PrepareEditScreen(props) {
     };
 
     const handleAddFields = () => {
-        // const values = [...toolss];
+        // const values = [...tools];
         // values.push({img:'',desc:''});
-        // setToolss(values);
+        // setTools(values);
         
-        setToolss([...toolss, {img:'',desc:''}])
+        setTools([...tools, {img:'',desc:''}])
         
         // setImg([img])
         // setDesc([desc])
@@ -73,17 +73,17 @@ export default function PrepareEditScreen(props) {
     };
 
     const handleRemoveFields = index => {
-        const values = [...toolss];
+        const values = [...tools];
         values.splice(index, 1);
-        setToolss(values);
+        setTools(values);
     };
 
     const handleChangeInput = ( desc, event) => {
-        const values = toolss.map(i => {
-            if(desc === i.desc) {
-                i[event.target.name] = event.target.value
+        const values = alat.tools.map(tools => {
+            if(desc === tools.desc) {
+                tools[event.target.name] = event.target.value
             }
-            return i;
+            return tools;
         })
         // const {name, value} = event.target;
         // const values = [...toolss];
@@ -97,7 +97,7 @@ export default function PrepareEditScreen(props) {
         // const values = [...toolss];
         // values[i][event.target.id] = event.target.value;
         
-        setToolss(values);
+        setDesc(values);
     }
 
     useEffect(() => {
@@ -123,7 +123,7 @@ export default function PrepareEditScreen(props) {
         alat,
         dispatch,
         alatId,
-        tools,
+        
         successUpdate,
         props.history
     ]);
@@ -222,12 +222,39 @@ export default function PrepareEditScreen(props) {
                                 ></input>
                                 <label htmlFor="desc">Description :</label>
                                 <input
+                                    name="desc"
                                     id="desc"
                                     type="text"
                                     placeholder="Masukkan Deskripsi Gambar"
                                     value={tools.desc}
-                                    onChange={(e) => setDesc(e.target.value)}
+                                    onChange={ event => handleChangeInput(tools.desc,event)}
+                                    // onChange={(e) => setDesc(e.target.value)}
                                 ></input>
+                                <label htmlFor="imageFile">Gambar File</label>
+                                <input
+                                    type="file"
+                                    id="imageFile"
+                                    label="Pilih Gambar"
+                                    onChange={uploadFileHandler}
+                                ></input>
+                                {loadingUpload && <LoadingBox></LoadingBox>}
+                                {errorUpload && (
+                                    <MessageBox variant="danger">{errorUpload}</MessageBox>
+                                )}
+                                <div className="col-2">
+                                    <button 
+                                        className="btnDelete" 
+                                        onClick={() => handleRemoveFields(tools.img)}
+                                    >
+                                        <DeleteOutlined />
+                                    </button>
+                                    <button 
+                                        className="btn" 
+                                        onClick={() => handleAddFields()}
+                                    >
+                                        <PlusOutlined />
+                                    </button>
+                                </div>
                                 {/* <button onClick={() => handleRemoveFields(img.id)}>
                                     <DeleteOutlined />
                                 </button>
@@ -236,17 +263,17 @@ export default function PrepareEditScreen(props) {
                                 </button> */}
                             </>)}
                         </li>
-                        <li>
+                        {/* <li>
                             <p>Tambah Data :</p>
                             {toolss.map((toolss) => <>
-                                {/* <label htmlFor="image">Gambar :</label>
+                                <label htmlFor="image">Gambar :</label>
                                 <input
                                     id="img"
                                     type="text"
                                     placeholder="Masukkan Gambar"
                                     value={img}
                                     onChange={(e) => setImg(e.target.value)}
-                                ></input> */}
+                                ></input>
                                 <label htmlFor="desc">Description</label>
                                 <input
                                     name="desc"
@@ -277,7 +304,7 @@ export default function PrepareEditScreen(props) {
                                     </button>
                                 </div>
                             </>)}
-                        </li>
+                        </li> */}
                         {/* <li>
                             <label htmlFor="desc">Description</label>
                             <input
