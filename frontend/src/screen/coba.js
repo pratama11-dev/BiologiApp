@@ -1,99 +1,71 @@
-import React, { useState } from 'react';
-import Container from '@material-ui/core/Container';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
-import Icon from '@material-ui/core/Icon';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react'
+import { Layout, Menu, Breadcrumb } from 'antd';
+import {
+  DesktopOutlined,
+  PieChartOutlined,
+  FileOutlined,
+  TeamOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-    },
-  },
-  button: {
-    margin: theme.spacing(1),
-  }
-}))
+export default function App() {
+  const { Header, Content, Footer, Sider } = Layout;
+  const { SubMenu } = Menu;
 
-function App() {
-  const classes = useStyles()
-  const [inputFields, setInputFields] = useState([
-    { id: uuidv4(), firstName: '', lastName: '' },
-  ]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("InputFields", inputFields);
+  class SiderDemo extends React.Component {
+  state = {
+    collapsed: false,
   };
 
-  const handleChangeInput = (id, event) => {
-    const newInputFields = inputFields.map(i => {
-      if(id === i.id) {
-        i[event.target.name] = event.target.value
-      }
-      return i;
-    })
-    
-    setInputFields(newInputFields);
-  }
+  onCollapse = collapsed => {
+    console.log(collapsed);
+    this.setState({ collapsed });
+  };
 
-  const handleAddFields = () => {
-    setInputFields([...inputFields, { id: uuidv4(),  firstName: '', lastName: '' }])
+    render(){
+      const { collapsed } = this.state;
+      return (
+        <Layout style={{ minHeight: '100vh' }}>
+          <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
+            <div className="logo" />
+            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+              <Menu.Item key="1" icon={<PieChartOutlined />}>
+                Option 1
+              </Menu.Item>
+              <Menu.Item key="2" icon={<DesktopOutlined />}>
+                Option 2
+              </Menu.Item>
+              <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+                <Menu.Item key="3">Tom</Menu.Item>
+                <Menu.Item key="4">Bill</Menu.Item>
+                <Menu.Item key="5">Alex</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+                <Menu.Item key="6">Team 1</Menu.Item>
+                <Menu.Item key="8">Team 2</Menu.Item>
+              </SubMenu>
+              <Menu.Item key="9" icon={<FileOutlined />}>
+                Files
+              </Menu.Item>
+            </Menu>
+          </Sider>
+          <Layout className="site-layout">
+            <Header className="site-layout-background" style={{ padding: 0 }} />
+            <Content style={{ margin: '0 16px' }}>
+              <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb.Item>User</Breadcrumb.Item>
+                <Breadcrumb.Item>Bill</Breadcrumb.Item>
+              </Breadcrumb>
+              <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                Bill is a cat.
+              </div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          </Layout>
+        </Layout>
+      );
+    }
   }
-
-  const handleRemoveFields = id => {
-    const values  = [...inputFields];
-    values.splice(values.findIndex(value => value.id === id), 1);
-    setInputFields(values);
-  }
-
-  return (
-    <Container>
-      <h1>Add New Member</h1>
-      <form className={classes.root} onSubmit={handleSubmit}>
-        { inputFields.map(inputField => (
-          <div key={inputField.id}>
-            <TextField
-              name="firstName"
-              label="First Name"
-              variant="filled"
-              value={inputField.firstName}
-              onChange={event => handleChangeInput(inputField.id, event)}
-            />
-            <TextField
-              name="lastName"
-              label="Last Name"
-              variant="filled"
-              value={inputField.lastName}
-              onChange={event => handleChangeInput(inputField.id, event)}
-            />
-            <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-              <RemoveIcon />
-            </IconButton>
-            <IconButton
-              onClick={handleAddFields}
-            >
-              <AddIcon />
-            </IconButton>
-          </div>
-        )) }
-        <Button
-          className={classes.button}
-          variant="contained" 
-          color="primary" 
-          type="submit" 
-          endIcon={<Icon>send</Icon>}
-          onClick={handleSubmit}
-        >Send</Button>
-      </form>
-    </Container>
-  );
+  ReactDOM.render(<SiderDemo />, mountNode);
 }
-
-export default App;

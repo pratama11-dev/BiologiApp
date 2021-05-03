@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     DoubleLeftOutlined,
 } from '@ant-design/icons';
-import AnimatedNumber from 'react-animated-number'
+import AnimatedNumber from 'react-animated-number';
 
 export default function SimulasiScreen() {
     
