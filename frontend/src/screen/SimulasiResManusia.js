@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import {
     DoubleLeftOutlined,
 } from '@ant-design/icons';
 import AnimatedNumber from 'react-animated-number';
+import ProgressBar from '../components/ProgressBar';
+
 // import { useSelector } from 'react-redux';
 // import LoadingBox from '../components/LoadingBox';
 // import MessageBox from '../components/MessageBox';
@@ -31,7 +33,111 @@ export default function SimulasiResManusia() {
     const [ketujuh, setKetujuh] = useState(0);
     const [kedelapan, setKedelapan] = useState(0);
 
-    
+    const [value, setValue] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPertama((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= 6000) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []); 
+      
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKedua((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= kedua) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []);   
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKetiga((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= ketiga) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKeempat((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= keempat) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKelima((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= kelima) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []); 
+      
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKeenam((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= keenam) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []);   
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKetujuh((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= ketujuh) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setKedelapan((oldValue) => {
+                const newValue = oldValue + 1;
+        
+                if (newValue >= kedelapan) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, []);
 
 
     // const randomNumber = toNumber(Math.random() * 100);
@@ -62,6 +168,7 @@ export default function SimulasiResManusia() {
                                             value={beratProA}
                                             onChange={(e) => setberatProA(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -75,6 +182,7 @@ export default function SimulasiResManusia() {
                                             value={beratProB}
                                             onChange={(e) => setberatProB(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                             <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan sebelum melakukan aktivitas
@@ -89,6 +197,7 @@ export default function SimulasiResManusia() {
                                             value={beratProC}
                                             onChange={(e) => setberatProC(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -102,15 +211,16 @@ export default function SimulasiResManusia() {
                                             value={beratProD}
                                             onChange={(e) => setberatProD(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                             <p />3. Mengisi gallon dengan air sebanyak 6.000 mL
                                 <div className="col-2-simulasi">
-                                    {/* <img src="../img/alat/respiro.gif"/> */}
+                                    <img src="../img/alat/isiair.gif"/>
                                 </div>
                             <p />4.	Memberi tanda sebagai ukuran pada gallon pada setiap 100ml dengan menggunakan spidol
                                 <div className="col-2-simulasi">
-                                    {/* <img src="../img/alat/vaselin.gif"/> */}
+                                    <img src="../img/alat/spidol.gif"/>
                                 </div>
                             <p />5.	Gallon dimasukan ke dalam ember dengan posisi terbalik, pastikan air tidak tumpah dan tidak ada udara yang masuk
                                 <div className="col-2-simulasi">
@@ -122,7 +232,12 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />7.	Nafas dihembuskan dalam satu tarikan nafas
                                 <div className="col-2-simulasi">
-
+                                     <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={pertama} 
+                                        max={6000}>
+                                    </ProgressBar>
                                 </div>
                                 <div className="col-2-tombol">
                                     <ul>
@@ -139,6 +254,16 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                                <div className="col-2-simulasi">
+                                    <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"}
+                                        value={kedua} 
+                                        max={6000}>
+                                    </ProgressBar>
+                                </div>
+                                <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Laki-laki B: 
                                         <AnimatedNumber 
@@ -153,6 +278,14 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                                <div className="col-2-simulasi">
+                                    <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={ketiga} 
+                                        max={6000}>
+                                    </ProgressBar>
                                 </div>
                                 <div className="col-2-tombol">
                                     <ul>
@@ -169,6 +302,16 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                                <div className="col-2-simulasi">
+                                     <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={keempat} 
+                                        max={6000}>
+                                    </ProgressBar>
+                                </div>
+                                <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan B: 
                                         <AnimatedNumber 
@@ -216,6 +359,7 @@ export default function SimulasiResManusia() {
                                             value={beratProF}
                                             onChange={(e) => setberatProF(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                             <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan setelah melakukan aktivitas berlari
@@ -230,6 +374,7 @@ export default function SimulasiResManusia() {
                                             value={beratProG}
                                             onChange={(e) => setberatProG(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -243,15 +388,16 @@ export default function SimulasiResManusia() {
                                             value={beratProH}
                                             onChange={(e) => setberatProH(e.target.value)}
                                         ></input>
+                                        <label>Kg</label>
                                     </ul>
                                 </div>
                             <p />3. Mengisi gallon dengan air 6.000 mL
                                 <div className="col-2-simulasi">
-                                    {/* <img src="../img/alat/respiro.gif"/> */}
+                                    <img src="../img/alat/isiair.gif"/>
                                 </div>
                             <p />4.	Memberi tanda sebagai ukuran pada gallon pada setiap 100ml dengan menggunakan spidol
                                 <div className="col-2-simulasi">
-                                    {/* <img src="../img/alat/vaselin.gif"/> */}
+                                    <img src="../img/alat/spidol.gif"/>
                                 </div>
                             <p />5.	Gallon dimasukan ke dalam ember dengan posisi terbalik, pastikan air tidak tumpah dan tidak ada udara yang masuk
                                 <div className="col-2-simulasi">
@@ -263,20 +409,21 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />7.	Nafas dihembuskan dalam satu tarikan nafas
                                 <div className="col-2-simulasi">
-
-                                </div>
-                            <p />8.	Catat hasil pengukuran  yang didapatkan.
-                                <div className="col-2-simulasi">
-
+                                    <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={kelima} 
+                                        max={6000}>
+                                    </ProgressBar>
                                 </div>
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Laki-laki: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {kelima}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKelima(beratProE * 90 - 890)}
                                             className='btn'
@@ -284,6 +431,16 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                                <div className="col-2-simulasi">
+                                    <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={keenam} 
+                                        max={6000}>
+                                    </ProgressBar>
+                                </div>
+                                <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan: 
                                         <AnimatedNumber 
@@ -298,6 +455,14 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                                <div className="col-2-simulasi">
+                                    <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={ketujuh} 
+                                        max={6000}>
+                                    </ProgressBar>
                                 </div>
                                 <div className="col-2-tombol">
                                     <ul>
@@ -314,6 +479,16 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                                <div className="col-2-simulasi">
+                                    <img src="../img/alat/eostin.gif"/>
+                                    <ProgressBar 
+                                        color={"#eee"} 
+                                        value={kedelapan} 
+                                        max={6000}>
+                                    </ProgressBar>
+                                </div>
+                                <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan: 
                                         <AnimatedNumber 
@@ -328,6 +503,10 @@ export default function SimulasiResManusia() {
                                             Start
                                         </button>
                                     </ul>
+                                </div>
+                            <p />8.	Catat hasil pengukuran  yang didapatkan.
+                                <div className="col-2-simulasi">
+
                                 </div>
                         </div>
                     </div>
