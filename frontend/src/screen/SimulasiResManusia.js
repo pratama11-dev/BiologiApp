@@ -33,15 +33,24 @@ export default function SimulasiResManusia() {
     const [ketujuh, setKetujuh] = useState(0);
     const [kedelapan, setKedelapan] = useState(0);
 
-    const [value, setValue] = useState(0);
+    const [valueA, setValueA] = useState(0);
+    const [valueB, setValueB] = useState(0);
+
 
     useEffect(() => {
+        // const interval = setInterval(()=> {
+        //     setValueA(valueA => valueA + 1);
+        // },1);
+        // return () => clearInterval(interval);
+
         const interval = setInterval(() => {
-            setPertama((oldValue) => {
+            setValueA((oldValue) => {
                 const newValue = oldValue + 1;
-        
-                if (newValue >= 6000) {
-                clearInterval(interval);
+                
+                if (newValue >= pertama) {
+                    clearInterval(interval);
+                    console.log(pertama)
+                    console.log(beratProA)
                 }
             return newValue;
           });
@@ -50,7 +59,7 @@ export default function SimulasiResManusia() {
       
     useEffect(() => {
         const interval = setInterval(() => {
-            setKedua((oldValue) => {
+            setValueB((oldValue) => {
                 const newValue = oldValue + 1;
         
                 if (newValue >= kedua) {
@@ -61,83 +70,83 @@ export default function SimulasiResManusia() {
         }, 1);
     }, []);   
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setKetiga((oldValue) => {
-                const newValue = oldValue + 1;
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setKetiga((oldValue) => {
+    //             const newValue = oldValue + 1;
         
-                if (newValue >= ketiga) {
-                clearInterval(interval);
-                }
-            return newValue;
-          });
-        }, 1);
-    }, []);
+    //             if (newValue >= ketiga) {
+    //             clearInterval(interval);
+    //             }
+    //         return newValue;
+    //       });
+    //     }, 1);
+    // }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setKeempat((oldValue) => {
-                const newValue = oldValue + 1;
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setKeempat((oldValue) => {
+    //             const newValue = oldValue + 1;
         
-                if (newValue >= keempat) {
-                clearInterval(interval);
-                }
-            return newValue;
-          });
-        }, 1);
-    }, []);
+    //             if (newValue >= keempat) {
+    //             clearInterval(interval);
+    //             }
+    //         return newValue;
+    //       });
+    //     }, 1);
+    // }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setKelima((oldValue) => {
-                const newValue = oldValue + 1;
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setKelima((oldValue) => {
+    //             const newValue = oldValue + 1;
         
-                if (newValue >= kelima) {
-                clearInterval(interval);
-                }
-            return newValue;
-          });
-        }, 1);
-    }, []); 
+    //             if (newValue >= kelima) {
+    //             clearInterval(interval);
+    //             }
+    //         return newValue;
+    //       });
+    //     }, 1);
+    // }, []); 
       
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setKeenam((oldValue) => {
-                const newValue = oldValue + 1;
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setKeenam((oldValue) => {
+    //             const newValue = oldValue + 1;
         
-                if (newValue >= keenam) {
-                clearInterval(interval);
-                }
-            return newValue;
-          });
-        }, 1);
-    }, []);   
+    //             if (newValue >= keenam) {
+    //             clearInterval(interval);
+    //             }
+    //         return newValue;
+    //       });
+    //     }, 1);
+    // }, []);   
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setKetujuh((oldValue) => {
-                const newValue = oldValue + 1;
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setKetujuh((oldValue) => {
+    //             const newValue = oldValue + 1;
         
-                if (newValue >= ketujuh) {
-                clearInterval(interval);
-                }
-            return newValue;
-          });
-        }, 1);
-    }, []);
+    //             if (newValue >= ketujuh) {
+    //             clearInterval(interval);
+    //             }
+    //         return newValue;
+    //       });
+    //     }, 1);
+    // }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setKedelapan((oldValue) => {
-                const newValue = oldValue + 1;
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setKedelapan((oldValue) => {
+    //             const newValue = oldValue + 1;
         
-                if (newValue >= kedelapan) {
-                clearInterval(interval);
-                }
-            return newValue;
-          });
-        }, 1);
-    }, []);
+    //             if (newValue >= kedelapan) {
+    //             clearInterval(interval);
+    //             }
+    //         return newValue;
+    //       });
+    //     }, 1);
+    // }, []);
 
 
     // const randomNumber = toNumber(Math.random() * 100);
@@ -163,7 +172,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Laki-Laki A: </label>
                                         {/* <p><b>{randomeNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratA"
                                             placeholder="Masukkan berat"
                                             value={beratProA}
                                             onChange={(e) => setberatProA(e.target.value)}
@@ -177,7 +186,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Laki-Laki B: </label>
                                         {/* <p><b>{randomeNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratB"
                                             placeholder="Masukkan berat"
                                             value={beratProB}
                                             onChange={(e) => setberatProB(e.target.value)}
@@ -192,7 +201,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Perempuan A: </label>
                                         {/* <p><b>{randomNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratC"
                                             placeholder="Masukkan berat"
                                             value={beratProC}
                                             onChange={(e) => setberatProC(e.target.value)}
@@ -206,7 +215,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Perempuan A: </label>
                                         {/* <p><b>{randomNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratD"
                                             placeholder="Masukkan berat"
                                             value={beratProD}
                                             onChange={(e) => setberatProD(e.target.value)}
@@ -232,10 +241,10 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />7.	Nafas dihembuskan dalam satu tarikan nafas
                                 <div className="col-2-simulasi">
-                                     <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={pertama} 
+                                        value={valueA} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -259,7 +268,7 @@ export default function SimulasiResManusia() {
                                     <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"}
-                                        value={kedua} 
+                                        value={valueB} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -290,11 +299,11 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan A: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {ketiga}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKetiga(beratProC * 90 - 870)}
                                             className='btn'
@@ -314,11 +323,11 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan B: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {keempat}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKeempat(beratProD * 70 - 860)}
                                             className='btn'
@@ -333,6 +342,57 @@ export default function SimulasiResManusia() {
                                 </div>
                         </div>
                         <div className="judul">
+                            <h2 />Tabel hasil pengamatan
+                            <p />Praktikum A
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Kegiatan</th>
+                                        <th>Masa Tubuh</th>
+                                        <th>Volume Awal Galon</th>
+                                        <th>Volume Akhir Galon</th>
+                                        <th>Volume Kapasitas Paru-paru</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Probandus Laki-Laki A</td>
+                                        <td>Sebelum melakukan aktifitas</td>
+                                        <td>{beratProA} Kg</td>
+                                        <td>6.000 mL</td>
+                                        <td>{pertama} mL</td>
+                                        <td>{6000 - pertama} mL</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Probandus Laki-Laki B</td>
+                                        <td>Setelah melakukan aktifitas</td>
+                                        <td>{beratProB} Kg</td>
+                                        <td>6.000 mL</td>
+                                        <td>{kedua} mL</td>
+                                        <td>{6000 - kedua} mL</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Probandus Perempuan A</td>
+                                        <td>Sebelum melakukan aktifitas</td>
+                                        <td>{beratProC} Kg</td>
+                                        <td>6.000 mL</td>
+                                        <td>{ketiga} mL</td>
+                                        <td>{6000 - ketiga} mL</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Probandus Perempuan B</td>
+                                        <td>Setelah melakukan aktifitas</td>
+                                        <td>{beratProD} Kg</td>
+                                        <td>6.000 mL</td>
+                                        <td>{keempat} mL</td>
+                                        <td>{6000 - keempat} mL</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className="judul">
                             <h2 />Praktikum B
                             <p />1. Mengukur masa probandus laki-laki yang akan melakukan percobaan setelah melakukan aktivitas berlari
                                 <div className="col-2-simulasi">
@@ -341,7 +401,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Laki-Laki A: </label>
                                         {/* <p><b>{randomeNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratE"
                                             placeholder="Masukkan berat"
                                             value={beratProE}
                                             onChange={(e) => setberatProE(e.target.value)}
@@ -354,7 +414,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Laki-Laki B: </label>
                                         {/* <p><b>{randomeNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratF"
                                             placeholder="Masukkan berat"
                                             value={beratProF}
                                             onChange={(e) => setberatProF(e.target.value)}
@@ -369,7 +429,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Perempuan A: </label>
                                         {/* <p><b>{randomeNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratG"
                                             placeholder="Masukkan berat"
                                             value={beratProG}
                                             onChange={(e) => setberatProG(e.target.value)}
@@ -383,7 +443,7 @@ export default function SimulasiResManusia() {
                                         <label htmlFor="nilaiB">Nilai Berat Probandus Perempuan A: </label>
                                         {/* <p><b>{randomeNumber} Kg</b></p> */}
                                         <input
-                                            id="berat"
+                                            id="beratH"
                                             placeholder="Masukkan berat"
                                             value={beratProH}
                                             onChange={(e) => setberatProH(e.target.value)}
@@ -443,11 +503,11 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {keenam}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKeenam(beratProF * 70 - 880)}
                                             className='btn'
@@ -467,11 +527,11 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Laki-laki: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {ketujuh}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKetujuh(beratProG * 90 - 870)}
                                             className='btn'
@@ -491,11 +551,11 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Perempuan: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {kedelapan}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKedelapan(beratProH * 70 - 860)}
                                             className='btn'
@@ -510,56 +570,7 @@ export default function SimulasiResManusia() {
                                 </div>
                         </div>
                     </div>
-                    <div className="judul">
-                        <h2 />Tabel hasil pengamatan
-                        <p />Praktikum A
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Kegiatan</th>
-                                    <th>Masa Tubuh</th>
-                                    <th>Volume Awal Galon</th>
-                                    <th>Volume Akhir Galon</th>
-                                    <th>Volume Kapasitas Paru-paru</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Probandus Laki-Laki A</td>
-                                    <td>Sebelum melakukan aktifitas</td>
-                                    <td>{beratProA} Kg</td>
-                                    <td>6.000 mL</td>
-                                    <td>{pertama} mL</td>
-                                    <td>{6000 - pertama} mL</td>
-                                </tr>
-                                <tr>
-                                    <td>Probandus Laki-Laki B</td>
-                                    <td>Setelah melakukan aktifitas</td>
-                                    <td>{beratProB} Kg</td>
-                                    <td>6.000 mL</td>
-                                    <td>{kedua} mL</td>
-                                    <td>{6000 - kedua} mL</td>
-                                </tr>
-                                <tr>
-                                    <td>Probandus Perempuan A</td>
-                                    <td>Sebelum melakukan aktifitas</td>
-                                    <td>{beratProC} Kg</td>
-                                    <td>6.000 mL</td>
-                                    <td>{ketiga} mL</td>
-                                    <td>{6000 - ketiga} mL</td>
-                                </tr>
-                                <tr>
-                                    <td>Probandus Perempuan B</td>
-                                    <td>Setelah melakukan aktifitas</td>
-                                    <td>{beratProD} Kg</td>
-                                    <td>6.000 mL</td>
-                                    <td>{keempat} mL</td>
-                                    <td>{6000 - keempat} mL</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    
                     <div className="judul">
                         <h2 />Tabel hasil pengamatan
                         <p />Praktikum B
