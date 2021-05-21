@@ -33,7 +33,7 @@ const ProgressBar = ({value, max, color, width}) => {
     return (
         <Container color={color} width={width}>
             <progress value={value} max={max} />
-            <span>: {value - 1} mL</span>
+            <span>: {value} mL</span>
         </Container>
     );
 }

@@ -35,14 +35,15 @@ export default function SimulasiResManusia() {
 
     const [valueA, setValueA] = useState(0);
     const [valueB, setValueB] = useState(0);
+    const [valueC, setValueC] = useState(0);
+    const [valueD, setValueD] = useState(0);
+    const [valueE, setValueE] = useState(0);
+    const [valueF, setValueF] = useState(0);
+    const [valueG, setValueG] = useState(0);
+    const [valueH, setValueH] = useState(0);
 
 
     useEffect(() => {
-        // const interval = setInterval(()=> {
-        //     setValueA(valueA => valueA + 1);
-        // },1);
-        // return () => clearInterval(interval);
-
         const interval = setInterval(() => {
             setValueA((oldValue) => {
                 const newValue = oldValue + 1;
@@ -55,7 +56,7 @@ export default function SimulasiResManusia() {
             return newValue;
           });
         }, 1);
-    }, []); 
+    }, [pertama]); 
       
     useEffect(() => {
         const interval = setInterval(() => {
@@ -68,85 +69,85 @@ export default function SimulasiResManusia() {
             return newValue;
           });
         }, 1);
-    }, []);   
+    }, [kedua]);   
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setKetiga((oldValue) => {
-    //             const newValue = oldValue + 1;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueC((oldValue) => {
+                const newValue = oldValue + 1;
         
-    //             if (newValue >= ketiga) {
-    //             clearInterval(interval);
-    //             }
-    //         return newValue;
-    //       });
-    //     }, 1);
-    // }, []);
+                if (newValue >= ketiga) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, [ketiga]);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setKeempat((oldValue) => {
-    //             const newValue = oldValue + 1;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueD((oldValue) => {
+                const newValue = oldValue + 1;
         
-    //             if (newValue >= keempat) {
-    //             clearInterval(interval);
-    //             }
-    //         return newValue;
-    //       });
-    //     }, 1);
-    // }, []);
+                if (newValue >= keempat) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, [keempat]);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setKelima((oldValue) => {
-    //             const newValue = oldValue + 1;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueE((oldValue) => {
+                const newValue = oldValue + 1;
         
-    //             if (newValue >= kelima) {
-    //             clearInterval(interval);
-    //             }
-    //         return newValue;
-    //       });
-    //     }, 1);
-    // }, []); 
+                if (newValue >= kelima) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, [kelima]); 
       
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setKeenam((oldValue) => {
-    //             const newValue = oldValue + 1;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueF((oldValue) => {
+                const newValue = oldValue + 1;
         
-    //             if (newValue >= keenam) {
-    //             clearInterval(interval);
-    //             }
-    //         return newValue;
-    //       });
-    //     }, 1);
-    // }, []);   
+                if (newValue >= keenam) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, [keenam]);   
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setKetujuh((oldValue) => {
-    //             const newValue = oldValue + 1;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueG((oldValue) => {
+                const newValue = oldValue + 1;
         
-    //             if (newValue >= ketujuh) {
-    //             clearInterval(interval);
-    //             }
-    //         return newValue;
-    //       });
-    //     }, 1);
-    // }, []);
+                if (newValue >= ketujuh) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, [ketujuh]);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setKedelapan((oldValue) => {
-    //             const newValue = oldValue + 1;
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueH((oldValue) => {
+                const newValue = oldValue + 1;
         
-    //             if (newValue >= kedelapan) {
-    //             clearInterval(interval);
-    //             }
-    //         return newValue;
-    //       });
-    //     }, 1);
-    // }, []);
+                if (newValue >= kedelapan) {
+                clearInterval(interval);
+                }
+            return newValue;
+          });
+        }, 1);
+    }, [kedelapan]);
 
 
     // const randomNumber = toNumber(Math.random() * 100);
@@ -251,15 +252,17 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Laki-laki A: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {pertama}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setPertama(beratProA * 90 - 890)}
                                             className='btn'
                                         >
+                                            {console.log(pertama)}
+                                            {console.log(beratProA)}
                                             Start
                                         </button>
                                     </ul>
@@ -275,11 +278,11 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-tombol">
                                     <ul>
                                         <p /> Hasil Pengukuran Probandus Laki-laki B: 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {kedua}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
                                             onClick={() => setKedua(beratProB * 70 - 880)}
                                             className='btn'
@@ -292,7 +295,7 @@ export default function SimulasiResManusia() {
                                     <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={ketiga} 
+                                        value={valueC} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -316,7 +319,7 @@ export default function SimulasiResManusia() {
                                      <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={keempat} 
+                                        value={valueD} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -472,7 +475,7 @@ export default function SimulasiResManusia() {
                                     <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={kelima} 
+                                        value={valueE} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -496,7 +499,7 @@ export default function SimulasiResManusia() {
                                     <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={keenam} 
+                                        value={valueF} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -520,7 +523,7 @@ export default function SimulasiResManusia() {
                                     <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={ketujuh} 
+                                        value={valueG} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
@@ -544,7 +547,7 @@ export default function SimulasiResManusia() {
                                     <img src="../img/alat/eostin.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
-                                        value={kedelapan} 
+                                        value={valueH} 
                                         max={6000}>
                                     </ProgressBar>
                                 </div>
