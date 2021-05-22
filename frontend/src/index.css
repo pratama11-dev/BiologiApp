@@ -348,7 +348,7 @@ header a {
 }
 .banner{
   padding: 110px;
-  font-weight: bold;
+  font-weight: bolder;
   background: url('./lab.jpg');
   background-size: cover;
 }
