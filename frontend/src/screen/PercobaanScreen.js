@@ -9,7 +9,7 @@ export default function PercobaanScreen() {
         <div className="container">
             <div className="container">
                 <div className="tittle">
-                    <h1>Macam-Macam Simulasi</h1>
+                    <h1>Macam-Macam Percobaan</h1>
                     <div className="border"></div>
                 </div>
                 <div className="topik">

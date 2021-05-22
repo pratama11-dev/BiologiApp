@@ -1,20 +1,70 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     DoubleLeftOutlined,
 } from '@ant-design/icons';
-import AnimatedNumber from 'react-animated-number';
+import ProgressBarVer from '../components/ProgressBarVer';
+// import AnimatedNumber from 'react-animated-number';
+
 
 export default function SimulasiScreen() {
     
     const toNumber = (num) => Number(num.toFixed(2));
-    
+
+    const [beratProA, setberatProA] = useState('');
+
     const [pertama, setPertama] = useState(0);
     const [kedua, setKedua] = useState(0);
     const [ketiga, setKetiga] = useState(0);
+    
+    const [valueA, setValueA] = useState(0);
+    const [valueB, setValueB] = useState(0);
+    const [valueC, setValueC] = useState(0);
 
-    const randomNumber =toNumber(Math.random());
-    const randomeNumber = toNumber(Math.random());
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueA((oldValue) => {
+                const newValue = toNumber(oldValue + 0.01);
+                
+                if (newValue >= pertama) {
+                    clearInterval(interval);
+
+                }
+            return newValue;
+          });
+        }, 100);
+    }, [pertama]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueB((oldValue) => {
+                const newValue = toNumber(oldValue + 0.01);
+                
+                if (newValue >= kedua) {
+                    clearInterval(interval);
+
+                }
+            return newValue;
+          });
+        }, 100);
+    }, [kedua]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setValueC((oldValue) => {
+                const newValue = toNumber(oldValue + 0.01);
+                
+                if (newValue >= ketiga) {
+                    clearInterval(interval);
+
+                }
+            return newValue;
+          });
+        }, 100);
+    }, [ketiga]);
+
+    // const randomNumber =toNumber(Math.random());
+    // const randomeNumber = toNumber(Math.random());
 
     return (
         <div className="container">
@@ -30,10 +80,21 @@ export default function SimulasiScreen() {
                                     <img src="../img/alat/timbangan.gif"/>
                                     <ul>
                                         <label htmlFor="nilaiB">Nilai Berat Jangkrik: </label>
-                                        <p><b>{randomeNumber} gram</b></p>
-                                        {/* <label htmlFor="nilaiB">Nilai Berat Jangkrik 2: </label>
-                                        <p><b>{randomNumber} gram</b></p> */}
+                                        {/* <p><b>{randomeNumber} Kg</b></p> */}
+                                        <input
+                                            id="beratA"
+                                            placeholder="Masukkan berat"
+                                            value={beratProA}
+                                            onChange={(e) => setberatProA(e.target.value)}
+                                        ></input>
+                                        <label> gram</label>
                                     </ul>
+                                    {/* <ul>
+                                        <label htmlFor="nilaiB">Nilai Berat Jangkrik: </label>
+                                        <p><b>{randomeNumber} gram</b></p>
+                                        <label htmlFor="nilaiB">Nilai Berat Jangkrik 2: </label>
+                                        <p><b>{randomNumber} gram</b></p>
+                                    </ul> */}
                                 </div>
                             <p />2. Masukan Kristal NaOH / KOH ke dalam selapis kapas , lalu masukan ke dalam tabung respirometer
                                 <div className="col-2-simulasi">
@@ -57,42 +118,57 @@ export default function SimulasiScreen() {
                                 </div>
                                 <div className="col-2-tombol">
                                     <ul>
+                                        <ProgressBarVer 
+                                            color={"#eee"} 
+                                            value={valueA} 
+                                            max={15}>
+                                        </ProgressBarVer>
                                         <p /> Skala dalam 5 menit Pertama : 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {pertama}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
-                                            onClick={() => setPertama(randomNumber)}
+                                            onClick={() => setPertama(beratProA * 2)}
                                             className='btn'
                                         >
                                             Start
                                         </button>
                                     </ul>
                                     <ul>
+                                        <ProgressBarVer 
+                                            color={"#eee"} 
+                                            value={valueB} 
+                                            max={15}>
+                                        </ProgressBarVer>
                                         <p /> Skala dalam 5 menit Kedua : 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {kedua}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={2000}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKedua(pertama * 2)}
+                                            onClick={() => setKedua(pertama * 2 + 0.4)}
                                             className='btn'
                                         >
                                             Start
                                         </button>
                                     </ul>
                                     <ul>
+                                        <ProgressBarVer 
+                                            color={"#eee"} 
+                                            value={valueC} 
+                                            max={15}>
+                                        </ProgressBarVer>
                                         <p /> Skala dalam 5 menit Ketiga : 
-                                        <AnimatedNumber 
+                                        {/* <AnimatedNumber 
                                             value= {ketiga}
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={2500}
-                                        /> mL <br />
+                                        /> mL <br /> */}
                                             <button 
-                                            onClick={() => setKetiga(kedua * 2)}
+                                            onClick={() => setKetiga(kedua * 2 + 0.6)}
                                             className='btn'
                                         >
                                             Start
@@ -114,7 +190,7 @@ export default function SimulasiScreen() {
                                     <tbody>
                                         <tr>
                                             <td>Jangkrik</td>
-                                            <td>{randomeNumber} gram</td>
+                                            <td>{beratProA} gram</td>
                                             <td>{pertama} mL</td>
                                             <td>{kedua} mL</td>
                                             <td>{ketiga} mL</td>

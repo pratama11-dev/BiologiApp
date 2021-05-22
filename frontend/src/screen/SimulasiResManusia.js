@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
     DoubleLeftOutlined,
 } from '@ant-design/icons';
-import AnimatedNumber from 'react-animated-number';
 import ProgressBar from '../components/ProgressBar';
 
 // import { useSelector } from 'react-redux';
@@ -178,7 +177,7 @@ export default function SimulasiResManusia() {
                                             value={beratProA}
                                             onChange={(e) => setberatProA(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -192,7 +191,7 @@ export default function SimulasiResManusia() {
                                             value={beratProB}
                                             onChange={(e) => setberatProB(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                             <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan sebelum melakukan aktivitas
@@ -207,7 +206,7 @@ export default function SimulasiResManusia() {
                                             value={beratProC}
                                             onChange={(e) => setberatProC(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -221,7 +220,7 @@ export default function SimulasiResManusia() {
                                             value={beratProD}
                                             onChange={(e) => setberatProD(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                             <p />3. Mengisi gallon dengan air sebanyak 6.000 mL
@@ -409,6 +408,7 @@ export default function SimulasiResManusia() {
                                             value={beratProE}
                                             onChange={(e) => setberatProE(e.target.value)}
                                         ></input>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -422,7 +422,7 @@ export default function SimulasiResManusia() {
                                             value={beratProF}
                                             onChange={(e) => setberatProF(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                             <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan setelah melakukan aktivitas berlari
@@ -437,7 +437,7 @@ export default function SimulasiResManusia() {
                                             value={beratProG}
                                             onChange={(e) => setberatProG(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
@@ -451,7 +451,7 @@ export default function SimulasiResManusia() {
                                             value={beratProH}
                                             onChange={(e) => setberatProH(e.target.value)}
                                         ></input>
-                                        <label>Kg</label>
+                                        <label> Kg</label>
                                     </ul>
                                 </div>
                             <p />3. Mengisi gallon dengan air 6.000 mL
@@ -626,7 +626,7 @@ export default function SimulasiResManusia() {
                     </div>
                 </div>
                 <div className="btnArah">
-                    <Link to="/"><DoubleLeftOutlined /></Link>
+                    <Link to="/percobaan"><DoubleLeftOutlined /></Link>
                 </div>
             </div>
         </div>

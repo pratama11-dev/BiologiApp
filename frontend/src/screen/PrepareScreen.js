@@ -58,7 +58,7 @@ export default function PrepareScreen(props) {
                         </div>
                         
                         <div className="btn">
-                            <Link to={'/percobaan/'}>Simulasi →</Link>
+                            <Link to={'/percobaan/'}>Percobaan →</Link>
                         </div>
                     </div>
             </div>
