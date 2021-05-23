@@ -233,15 +233,15 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />5.	Gallon dimasukan ke dalam ember dengan posisi terbalik, pastikan air tidak tumpah dan tidak ada udara yang masuk
                                 <div className="col-2-simulasi">
-                                    {/* <img src="../img/alat/pasang.gif"/> */}
+                                    <img src="../img/alat/tuang.gif"/>
                                 </div>
                             <p />6.	Bernafas dengan cara menghirup nafas sedalam-dalamnya, dan mneghembuskan sekuat-kuatnya
                                 <div className="col-2-simulasi">
                                     {/* <img src="../img/alat/eostin.gif"/> */}
                                 </div>
-                            <p />7.	Nafas dihembuskan dalam satu tarikan nafas
+                            <p />7.	Nafas dihembuskan dalam satu tarikan nafas sehingga galon terangkat ke atas
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueA} 
@@ -396,6 +396,9 @@ export default function SimulasiResManusia() {
 
                         <div className="judul">
                             <h2 />Praktikum B
+                                <div className="col-2-simulasi">
+                                    <img src="../img/alat/larii.gif"/>
+                                </div>
                             <p />1. Mengukur masa probandus laki-laki yang akan melakukan percobaan setelah melakukan aktivitas berlari
                                 <div className="col-2-simulasi">
                                     <img src="../img/alat/beratlaki.gif"/>
@@ -464,15 +467,15 @@ export default function SimulasiResManusia() {
                                 </div>
                             <p />5.	Gallon dimasukan ke dalam ember dengan posisi terbalik, pastikan air tidak tumpah dan tidak ada udara yang masuk
                                 <div className="col-2-simulasi">
-                                    {/* <img src="../img/alat/pasang.gif"/> */}
+                                    <img src="../img/alat/tuang.gif"/>
                                 </div>
                             <p />6.	Bernafas dengan cara menghirup nafas sedalam-dalamnya, dan mneghembuskan sekuat-kuatnya
                                 <div className="col-2-simulasi">
                                     {/* <img src="../img/alat/eostin.gif"/> */}
                                 </div>
-                            <p />7.	Nafas dihembuskan dalam satu tarikan nafas
+                            <p />7.	Nafas dihembuskan dalam satu tarikan nafas sehingga galon terangkat ke atas
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueE} 

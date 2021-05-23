@@ -355,6 +355,11 @@ header a {
 .banner h1 span{
   color: #19456b;
 }
+
+.banner p{
+  background-color: #cecece52;
+}
+
 .topik{
   margin-top: 5px;
   margin-bottom: 60px;
