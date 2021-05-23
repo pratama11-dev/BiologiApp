@@ -267,7 +267,7 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"}
                                         value={valueB} 
@@ -291,7 +291,7 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueC} 
@@ -499,7 +499,7 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueF} 
@@ -523,7 +523,7 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueG} 
@@ -547,7 +547,7 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
-                                    <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueH} 
