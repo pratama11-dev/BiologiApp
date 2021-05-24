@@ -315,7 +315,7 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                                 <div className="col-2-simulasi">
-                                     <img src="../img/alat/eostin.gif"/>
+                                    <img src="../img/alat/tiup.gif"/>
                                     <ProgressBar 
                                         color={"#eee"} 
                                         value={valueD} 
