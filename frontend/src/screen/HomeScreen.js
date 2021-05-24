@@ -18,8 +18,8 @@ function HomeScreen(props) {
                 <div className="col-1">
                     <div className="banner">
                         <h1>Virtual Lab<span> Biology</span></h1>
-                        <p>Virtual laboratory merupakan media berbasis komputer yang dapat digunakan untuk peserta didik 
-                            dalam melakukan percobaan serta dapat mebambah semangat dan memotivasi peserta didik. Penggunaan virtual laboratory dapat menghemat waktu, 
+                        <p><span>Virtual laboratory</span> merupakan media berbasis komputer yang dapat digunakan untuk peserta didik 
+                            dalam melakukan percobaan serta dapat menambah semangat dan memotivasi peserta didik. Penggunaan <span>Virtual laboratory</span> dapat menghemat waktu, 
                             serta pembelajaran lebih menarik dan proses pembelajaran dapat berlangsung kapanpun dan dimanapun dilakukan.
                         </p>                          
                         <div className="btn">

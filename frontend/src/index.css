@@ -352,8 +352,13 @@ header a {
   background: url('./lab.jpg');
   background-size: cover;
 }
+
 .banner h1 span{
   color: #19456b;
+}
+
+.banner p span{
+  font-style: italic;
 }
 
 .banner p{
