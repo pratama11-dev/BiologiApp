@@ -257,7 +257,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setPertama(beratProA * 90 - 890)}
+                                            onClick={() => setPertama(beratProA * 90 - 573)}
                                             className='btn'
                                         >
                                             {console.log(pertama)}
@@ -283,7 +283,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKedua(beratProB * 70 - 880)}
+                                            onClick={() => setKedua(beratProB * 70 - 563)}
                                             className='btn'
                                         >
                                             Start
@@ -307,7 +307,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKetiga(beratProC * 90 - 870)}
+                                            onClick={() => setKetiga(beratProC * 90 - 570)}
                                             className='btn'
                                         >
                                             Start
@@ -331,7 +331,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKeempat(beratProD * 70 - 860)}
+                                            onClick={() => setKeempat(beratProD * 70 - 532)}
                                             className='btn'
                                         >
                                             Start
@@ -491,7 +491,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button  
-                                            onClick={() => setKelima(beratProE * 90 - 573)}
+                                            onClick={() => setKelima(beratProE * 90 - 890)}
                                             className='btn'
                                         >
                                             Start
@@ -515,7 +515,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKeenam(beratProF * 70 - 563)}
+                                            onClick={() => setKeenam(beratProF * 70 - 880)}
                                             className='btn'
                                         >
                                             Start
@@ -539,7 +539,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKetujuh(beratProG * 90 - 570)}
+                                            onClick={() => setKetujuh(beratProG * 90 - 870)}
                                             className='btn'
                                         >
                                             Start
@@ -563,7 +563,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKedelapan(beratProH * 70 - 532)}
+                                            onClick={() => setKedelapan(beratProH * 70 - 860)}
                                             className='btn'
                                         >
                                             Start
