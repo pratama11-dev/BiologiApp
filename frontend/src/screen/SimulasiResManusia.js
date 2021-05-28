@@ -368,7 +368,7 @@ export default function SimulasiResManusia() {
                                     </tr>
                                     <tr>
                                         <td>Probandus Laki-Laki B</td>
-                                        <td>Setelah melakukan aktifitas</td>
+                                        <td>Sebelum melakukan aktifitas</td>
                                         <td>{beratProB} Kg</td>
                                         <td>6.000 mL</td>
                                         <td>{kedua} mL</td>
@@ -384,7 +384,7 @@ export default function SimulasiResManusia() {
                                     </tr>
                                     <tr>
                                         <td>Probandus Perempuan B</td>
-                                        <td>Setelah melakukan aktifitas</td>
+                                        <td>Sebelum melakukan aktifitas</td>
                                         <td>{beratProD} Kg</td>
                                         <td>6.000 mL</td>
                                         <td>{keempat} mL</td>
@@ -490,8 +490,8 @@ export default function SimulasiResManusia() {
                                             frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
                                             duration={1500}
                                         /> mL <br /> */}
-                                        <button 
-                                            onClick={() => setKelima(beratProE * 90 - 890)}
+                                        <button  
+                                            onClick={() => setKelima(beratProE * 90 - 573)}
                                             className='btn'
                                         >
                                             Start
@@ -515,7 +515,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKeenam(beratProF * 70 - 880)}
+                                            onClick={() => setKeenam(beratProF * 70 - 563)}
                                             className='btn'
                                         >
                                             Start
@@ -539,7 +539,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKetujuh(beratProG * 90 - 870)}
+                                            onClick={() => setKetujuh(beratProG * 90 - 570)}
                                             className='btn'
                                         >
                                             Start
@@ -563,7 +563,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKedelapan(beratProH * 70 - 860)}
+                                            onClick={() => setKedelapan(beratProH * 70 - 532)}
                                             className='btn'
                                         >
                                             Start
@@ -594,7 +594,7 @@ export default function SimulasiResManusia() {
                             <tbody>
                                 <tr>
                                     <td>Probandus Laki-Laki A</td>
-                                    <td>Sebelum melakukan aktifitas</td>
+                                    <td>Setelah melakukan aktifitas</td>
                                     <td>{beratProE} Kg</td>
                                     <td>6.000 mL</td>
                                     <td>{kelima} mL</td>
@@ -610,7 +610,7 @@ export default function SimulasiResManusia() {
                                 </tr>
                                 <tr>
                                     <td>Probandus Perempuan A</td>
-                                    <td>Sebelum melakukan aktifitas</td>
+                                    <td>Setelah melakukan aktifitas</td>
                                     <td>{beratProG} Kg</td>
                                     <td>6.000 mL</td>
                                     <td>{ketujuh} mL</td>
