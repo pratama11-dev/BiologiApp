@@ -307,7 +307,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKetiga(beratProC * 90 - 570)}
+                                            onClick={() => setKetiga(beratProC * 90 - 447)}
                                             className='btn'
                                         >
                                             Start
@@ -331,7 +331,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKeempat(beratProD * 70 - 532)}
+                                            onClick={() => setKeempat(beratProD * 70 - 409)}
                                             className='btn'
                                         >
                                             Start
@@ -539,7 +539,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKetujuh(beratProG * 90 - 870)}
+                                            onClick={() => setKetujuh(beratProG * 90 - 748)}
                                             className='btn'
                                         >
                                             Start
@@ -563,7 +563,7 @@ export default function SimulasiResManusia() {
                                             duration={1500}
                                         /> mL <br /> */}
                                         <button 
-                                            onClick={() => setKedelapan(beratProH * 70 - 860)}
+                                            onClick={() => setKedelapan(beratProH * 70 - 737)}
                                             className='btn'
                                         >
                                             Start
