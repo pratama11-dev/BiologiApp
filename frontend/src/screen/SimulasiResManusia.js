@@ -149,11 +149,68 @@ export default function SimulasiResManusia() {
     }, [kedelapan]);
 
 
-    // const randomNumber = toNumber(Math.random() * 100);
-    // const randomeNumber = toNumber(Math.random() * 100);
+    const volumeTidalLakiA = Math.floor(Math.random() * (500 - 450 + 1)) + 450;
+    const volumeTidalLakiB = Math.floor(Math.random() * (500 - 450 + 1)) + 450;
+    const volumeTidalPerempuanA = Math.floor(Math.random() * (380 - 330 + 1)) + 330;
+    const volumeTidalPerempuanB = Math.floor(Math.random() * (380 - 330 + 1)) + 330;
 
-    // const pengukuran = toNumber(Math.random() * 100);
-    // const pengukuranPr = toNumber(Math.random() * 100);
+    const volumeCadInsLakiA = Math.floor(Math.random() * (3100 - 3000 + 101)) + 3000;
+    const volumeCadInsLakiB = Math.floor(Math.random() * (3100 - 3000 + 101)) + 3000;
+    const volumeCadInsPerempuanA = Math.floor(Math.random() * (1900 - 1800 + 101)) + 1800;
+    const volumeCadInsPerempuanB = Math.floor(Math.random() * (1900 - 1800 + 101)) + 1800;
+
+    const volumeCadEksLakiA = Math.floor(Math.random() * (1200 - 1100 + 101)) + 1100;
+    const volumeCadEksLakiB = Math.floor(Math.random() * (1200 - 1100 + 101)) + 1100;
+    const volumeCadEksPerempuanA = Math.floor(Math.random() * (800 - 100 + 11)) + 100;
+    const volumeCadEksPerempuanB = Math.floor(Math.random() * (800 - 100 + 11)) + 100;
+
+    const volumeResLakiA = Math.floor(Math.random() * (1200 - 1100 + 121)) + 1100;
+    const volumeResLakiB = Math.floor(Math.random() * (1200 - 1100 + 121)) + 1100;
+    const volumeResPerempuanA = Math.floor(Math.random() * (1000 - 900 + 101)) + 900;
+    const volumeResPerempuanB = Math.floor(Math.random() * (1000 - 900 + 101)) + 900;
+
+    const kvLkA = volumeTidalLakiA + volumeCadInsLakiA + volumeCadEksLakiA;
+    const kvLkB = volumeTidalLakiB + volumeCadInsLakiB + volumeCadEksLakiB;
+    const kvPrA = volumeTidalPerempuanA + volumeCadInsPerempuanA + volumeCadEksPerempuanA;
+    const kvPrB = volumeTidalPerempuanB + volumeCadInsPerempuanB + volumeCadEksPerempuanB;
+
+    const totalLkA = volumeResLakiA + kvLkA;
+    const totalLkB = volumeResLakiB + kvLkB;    
+    const totalPrA = volumeResPerempuanA + kvPrA;
+    const totalPrB = volumeResPerempuanB + kvPrB;
+
+    // setelah aktivitas
+    const volumeTidalLakiAA = Math.floor(Math.random() * (490 - 450 + 1)) + 450;
+    const volumeTidalLakiBA = Math.floor(Math.random() * (490 - 450 + 1)) + 450;
+    const volumeTidalPerempuanAA = Math.floor(Math.random() * (370 - 330 + 1)) + 330;
+    const volumeTidalPerempuanBA = Math.floor(Math.random() * (370 - 330 + 1)) + 330;
+
+    const volumeCadInsLakiAA = Math.floor(Math.random() * (3090 - 3000 + 101)) + 3000;
+    const volumeCadInsLakiBA = Math.floor(Math.random() * (3090 - 3000 + 101)) + 3000;
+    const volumeCadInsPerempuanAA = Math.floor(Math.random() * (1890 - 1800 + 101)) + 1800;
+    const volumeCadInsPerempuanBA = Math.floor(Math.random() * (1890 - 1800 + 101)) + 1800;
+
+    const volumeCadEksLakiAA = Math.floor(Math.random() * (1190 - 1100 + 101)) + 1100;
+    const volumeCadEksLakiBA = Math.floor(Math.random() * (1190 - 1100 + 101)) + 1100;
+    const volumeCadEksPerempuanAA = Math.floor(Math.random() * (790 - 100 + 11)) + 100;
+    const volumeCadEksPerempuanBA = Math.floor(Math.random() * (790 - 100 + 11)) + 100;
+
+    const volumeResLakiAA = Math.floor(Math.random() * (1190 - 1100 + 121)) + 1100;
+    const volumeResLakiBA = Math.floor(Math.random() * (1190 - 1100 + 121)) + 1100;
+    const volumeResPerempuanAA = Math.floor(Math.random() * (990 - 900 + 101)) + 900;
+    const volumeResPerempuanBA = Math.floor(Math.random() * (990 - 900 + 101)) + 900;
+
+    const kvLkAA = volumeTidalLakiA + volumeCadInsLakiAA + volumeCadEksLakiAA;
+    const kvLkBA = volumeTidalLakiB + volumeCadInsLakiBA + volumeCadEksLakiBA;
+    const kvPrAA = volumeTidalPerempuanA + volumeCadInsPerempuanAA + volumeCadEksPerempuanAA;
+    const kvPrBA = volumeTidalPerempuanB + volumeCadInsPerempuanBA + volumeCadEksPerempuanBA;
+
+    const totalLkAA = volumeResLakiAA + kvLkAA;
+    const totalLkBA = volumeResLakiBA + kvLkBA;    
+    const totalPrAA = volumeResPerempuanAA + kvPrAA;
+    const totalPrBA = volumeResPerempuanBA + kvPrBA;
+
+
 
     return (
         <div className="container">
@@ -339,12 +396,43 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                             <p />8.	Catat hasil pengukuran  yang didapatkan.
-                                <div className="col-2-simulasi">
 
-                                </div>
                         </div>
                         <div className="judul">
                             <h2 />Tabel hasil pengamatan
+                            <p>Jika diketahui :</p>
+
+                            <div className="row">
+                                <div className="col-2">
+                                    <p>Volume Tidal Laki-Laki A: <b>{volumeTidalLakiA}</b> mL</p>
+                                    <p>Volume Tidal Laki-Laki B: <b>{volumeTidalLakiB}</b> mL</p>
+                                    <p>Volume Tidal Perempuan A: <b>{volumeTidalPerempuanA}</b> mL</p>
+                                    <p>Volume Tidal Perempuan B: <b>{volumeTidalPerempuanB}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Volume Cadangan Inspirasi Laki-Laki A: <b>{volumeCadInsLakiA}</b> mL</p>
+                                    <p>Volume Cadangan Inspirasi Laki-Laki B: <b>{volumeCadInsLakiB}</b> mL</p>
+                                    <p>Volume Cadangan Inspirasi Perempuan A: <b>{volumeCadInsPerempuanA}</b> mL</p>
+                                    <p>Volume Cadangan Inspirasi Perempuan B: <b>{volumeCadInsPerempuanB}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Volume Cadangan Ekspirasi Laki-Laki A: <b>{volumeCadEksLakiA}</b> mL</p>
+                                    <p>Volume Cadangan Ekspirasi Laki-Laki B: <b>{volumeCadEksLakiB}</b> mL</p>
+                                    <p>Volume Cadangan Ekspirasi Perempuan A: <b>{volumeCadEksPerempuanA}</b> mL</p>
+                                    <p>Volume Cadangan Ekspirasi Perempuan B: <b>{volumeCadEksPerempuanB}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Kapasitas Vital Laki-Laki A: <b>{kvLkA}</b> mL</p>
+                                    <p>Kapasitas Vital Laki-Laki B: <b>{kvLkB}</b> mL</p>
+                                    <p>Kapasitas Vital Perempuan A: <b>{kvPrA}</b> mL</p>
+                                    <p>Kapasitas Vital Perempuan B: <b>{kvPrB}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Untuk mencari KV rumusnya : VT + VCI + VCE</p>
+                                    <p>Untuk penghitungan kapasitas paru paru : KV + VR</p>
+                                </div>
+                            </div>
+
                             <p />Praktikum A
                             <table className="table">
                                 <thead>
@@ -364,7 +452,7 @@ export default function SimulasiResManusia() {
                                         <td>{beratProA} Kg</td>
                                         <td>6.000 mL</td>
                                         <td>{pertama} mL</td>
-                                        <td>{6000 - pertama} mL</td>
+                                        <td>{totalLkA} mL</td>
                                     </tr>
                                     <tr>
                                         <td>Probandus Laki-Laki B</td>
@@ -372,7 +460,7 @@ export default function SimulasiResManusia() {
                                         <td>{beratProB} Kg</td>
                                         <td>6.000 mL</td>
                                         <td>{kedua} mL</td>
-                                        <td>{6000 - kedua} mL</td>
+                                        <td>{totalLkB} mL</td>
                                     </tr>
                                     <tr>
                                         <td>Probandus Perempuan A</td>
@@ -380,7 +468,7 @@ export default function SimulasiResManusia() {
                                         <td>{beratProC} Kg</td>
                                         <td>6.000 mL</td>
                                         <td>{ketiga} mL</td>
-                                        <td>{6000 - ketiga} mL</td>
+                                        <td>{totalPrA} mL</td>
                                     </tr>
                                     <tr>
                                         <td>Probandus Perempuan B</td>
@@ -388,7 +476,7 @@ export default function SimulasiResManusia() {
                                         <td>{beratProD} Kg</td>
                                         <td>6.000 mL</td>
                                         <td>{keempat} mL</td>
-                                        <td>{6000 - keempat} mL</td>
+                                        <td>{totalPrB} mL</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -399,7 +487,7 @@ export default function SimulasiResManusia() {
                                 <div className="col-2-simulasi">
                                     <img src="../img/alat/larii.gif"/>
                                 </div>
-                            <p />1. Mengukur masa probandus laki-laki yang akan melakukan percobaan setelah melakukan aktivitas berlari
+                            <p />1. Mengukur masa probandus laki-laki yang akan melakukan percobaan setelah melakukan aktivitas berlari sejauh 3km
                                 <div className="col-2-simulasi">
                                     <img src="../img/alat/beratlaki.gif"/>
                                     <ul>
@@ -428,7 +516,7 @@ export default function SimulasiResManusia() {
                                         <label> Kg</label>
                                     </ul>
                                 </div>
-                            <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan setelah melakukan aktivitas berlari
+                            <p />2. Mengukur massa probandus perempuan yang akan melakukan percobaan setelah melakukan aktivitas berlari sejauh 2km
                                 <div className="col-2-simulasi">
                                     <img src="../img/alat/beratcewe.gif"/>
                                     <ul>
@@ -571,14 +659,44 @@ export default function SimulasiResManusia() {
                                     </ul>
                                 </div>
                             <p />8.	Catat hasil pengukuran  yang didapatkan.
-                                <div className="col-2-simulasi">
-
-                                </div>
                         </div>
                     </div>
                     
                     <div className="judul">
                         <h2 />Tabel hasil pengamatan
+                        <p>Jika diketahui :</p>
+
+                            <div className="row">
+                                <div className="col-2">
+                                    <p>Volume Tidal Laki-Laki A: <b>{volumeTidalLakiAA}</b> mL</p>
+                                    <p>Volume Tidal Laki-Laki B: <b>{volumeTidalLakiBA}</b> mL</p>
+                                    <p>Volume Tidal Perempuan A: <b>{volumeTidalPerempuanAA}</b> mL</p>
+                                    <p>Volume Tidal Perempuan B: <b>{volumeTidalPerempuanBA}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Volume Cadangan Inspirasi Laki-Laki A: <b>{volumeCadInsLakiAA}</b> mL</p>
+                                    <p>Volume Cadangan Inspirasi Laki-Laki B: <b>{volumeCadInsLakiBA}</b> mL</p>
+                                    <p>Volume Cadangan Inspirasi Perempuan A: <b>{volumeCadInsPerempuanAA}</b> mL</p>
+                                    <p>Volume Cadangan Inspirasi Perempuan B: <b>{volumeCadInsPerempuanBA}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Volume Cadangan Ekspirasi Laki-Laki A: <b>{volumeCadEksLakiAA}</b> mL</p>
+                                    <p>Volume Cadangan Ekspirasi Laki-Laki B: <b>{volumeCadEksLakiBA}</b> mL</p>
+                                    <p>Volume Cadangan Ekspirasi Perempuan A: <b>{volumeCadEksPerempuanAA}</b> mL</p>
+                                    <p>Volume Cadangan Ekspirasi Perempuan B: <b>{volumeCadEksPerempuanBA}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Kapasitas Vital Laki-Laki A: <b>{kvLkAA}</b> mL</p>
+                                    <p>Kapasitas Vital Laki-Laki B: <b>{kvLkBA}</b> mL</p>
+                                    <p>Kapasitas Vital Perempuan A: <b>{kvPrAA}</b> mL</p>
+                                    <p>Kapasitas Vital Perempuan B: <b>{kvPrBA}</b> mL</p>
+                                </div>
+                                <div className="col-2">
+                                    <p>Untuk mencari KV rumusnya : VT + VCI + VCE</p>
+                                    <p>Untuk penghitungan kapasitas paru paru : KV + VR</p>
+                                </div>
+                            </div>
+                            
                         <p />Praktikum B
                         <table className="table">
                             <thead>
@@ -598,7 +716,7 @@ export default function SimulasiResManusia() {
                                     <td>{beratProE} Kg</td>
                                     <td>6.000 mL</td>
                                     <td>{kelima} mL</td>
-                                    <td>{6000 - kelima} mL</td>
+                                    <td>{totalLkAA} mL</td>
                                 </tr>
                                 <tr>
                                     <td>Probandus Laki-Laki B</td>
@@ -606,7 +724,7 @@ export default function SimulasiResManusia() {
                                     <td>{beratProF} Kg</td>
                                     <td>6.000 mL</td>
                                     <td>{keenam} mL</td>
-                                    <td>{6000 - keenam} mL</td>
+                                    <td>{totalLkBA} mL</td>
                                 </tr>
                                 <tr>
                                     <td>Probandus Perempuan A</td>
@@ -614,7 +732,7 @@ export default function SimulasiResManusia() {
                                     <td>{beratProG} Kg</td>
                                     <td>6.000 mL</td>
                                     <td>{ketujuh} mL</td>
-                                    <td>{6000 - ketujuh} mL</td>
+                                    <td>{totalPrAA} mL</td>
                                 </tr>
                                 <tr>
                                     <td>Probandus Perempuan B</td>
@@ -622,7 +740,7 @@ export default function SimulasiResManusia() {
                                     <td>{beratProH} Kg</td>
                                     <td>6.000 mL</td>
                                     <td>{kedelapan} mL</td>
-                                    <td>{6000 - kedelapan} mL</td>
+                                    <td>{totalPrBA} mL</td>
                                 </tr>
                             </tbody>
                         </table>
