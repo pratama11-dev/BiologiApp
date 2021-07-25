@@ -30,6 +30,8 @@ const data = {
                     "<br>6. Setelah itu, masukan setetes eosin pada kedua pipa kapiler berskala setiap 5 menit</br>",
                     "<br>7. Catatlah hasil pengamatan dalam tabel</br>",
                     "<br>8. Lakukan hal yang sama dengan jangkrik yang kedua.</br>"],
+            masalah:["<br>1. Bagaimana hubungan antara jenis kelamin dan perbedaan massa tubuh manusia terhadap kapasitas paru-paru manusia?</br>",
+                    "<br>2. Bagaimana perbedaan antara kapasitas paru-paru manusia sebelum melakukan aktivitas dan sesudah melakukan aktivitas?</br>"],
             tools:[
                 {
                     img:"../img/alat/cotton.png",
@@ -98,6 +100,8 @@ const data = {
                 "<br>9.	Lakukakn hal tersebut pada probandus perempuan</br>",
                 "<br>10. Kemudian bandingkan hasil probandus laki-laki dan perempuan </br>",
             ],
+            masalah:["<br>1. Bagaimana hubungan antara jenis kelamin dan perbedaan massa tubuh manusia terhadap kapasitas paru-paru manusia?</br>",
+                    "<br>2. Bagaimana perbedaan antara kapasitas paru-paru manusia sebelum melakukan aktivitas dan sesudah melakukan aktivitas?</br>"],
             tools:[
                 {
                     img:'../img/alat/weighing-machine.png',

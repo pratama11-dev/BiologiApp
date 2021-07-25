@@ -39,6 +39,10 @@ export default function PrepareScreen(props) {
                                     <h2>Tujuan</h2>
                                     <p dangerouslySetInnerHTML={{__html:alat.tujuan}}></p>
                                 </div>
+                                <div className="judul">
+                                    <h2>Rumusan Masalah</h2>
+                                    <p dangerouslySetInnerHTML={{__html:alat.masalah}}></p>
+                                </div>
                             </div>
                             <div className="judul">
                                 <h2>Alat dan Bahan</h2>

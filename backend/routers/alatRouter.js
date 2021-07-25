@@ -43,6 +43,7 @@ alatRouter.post(
     const alat = new Alat({
       nama: 'sample ' + Date.now(),
       tujuan: 'sample',
+      masalah: 'sample',
       langkah: 'sample',
       tools: [
         {
@@ -70,6 +71,7 @@ alatRouter.put(
     if (alat) {
       alat.nama = req.body.nama;
       alat.tujuan = req.body.tujuan;
+      alat.masalah = req.body.masalah;
       alat.langkah = req.body.langkah;
       alat.tools = [{
         img : req.body.img,
