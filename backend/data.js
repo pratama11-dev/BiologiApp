@@ -30,8 +30,7 @@ const data = {
                     "<br>6. Setelah itu, masukan setetes eosin pada kedua pipa kapiler berskala setiap 5 menit</br>",
                     "<br>7. Catatlah hasil pengamatan dalam tabel</br>",
                     "<br>8. Lakukan hal yang sama dengan jangkrik yang kedua.</br>"],
-            masalah:["<br>1. Bagaimana hubungan antara jenis kelamin dan perbedaan massa tubuh manusia terhadap kapasitas paru-paru manusia?</br>",
-                    "<br>2. Bagaimana perbedaan antara kapasitas paru-paru manusia sebelum melakukan aktivitas dan sesudah melakukan aktivitas?</br>"],
+            masalah:["<br>1. Bagaimana hubungan perbandingan berat pada jangkrik terhadap kecepatan pernapasan pada jangkrik ?</br>",],
             tools:[
                 {
                     img:"../img/alat/cotton.png",
